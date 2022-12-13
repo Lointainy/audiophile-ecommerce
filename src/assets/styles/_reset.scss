@@ -1,0 +1,21 @@
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  all: unset;
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+}

@@ -1,0 +1,19 @@
+$light: ();
+
+$dark: ();
+
+.dark-theme {
+  @each $name, $color in $dark {
+    --color-#{""+$name}: #{$color};
+  }
+}
+
+.light-theme {
+  @each $name, $color in $light {
+    --color-#{""+$name}: #{$color};
+  }
+}
+
+@function color($getColor) {
+  @return var(--color-#{$getColor});
+}
