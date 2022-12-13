@@ -3,14 +3,13 @@ import router from '@router/router'
 import { RouterProvider } from 'react-router-dom'
 
 /* Hooks */
-import { useTheme } from '@hooks/useTheme'
+import { useAppSelector } from '@hooks/useRedux'
 
 const App: React.FC = () => {
-  const { userTheme, toggleTheme } = useTheme()
+  const theme = useAppSelector((store) => store.data.colorTheme)
 
-  console.log(userTheme)
   return (
-    <div className={`app ${userTheme}`}>
+    <div className={`app ${theme}`}>
       <RouterProvider router={router}></RouterProvider>
     </div>
   )
