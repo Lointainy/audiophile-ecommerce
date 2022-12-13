@@ -4,14 +4,14 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components": ["./src/components"],
-      "@layout": ["./src/layout"],
-      "@pages": ["src/pages"],
-      "@types": ["./src/types"],
+      "@layout/*": ["./src/layout/*"],
+      "@pages": ["./src/pages"],
+      "@types/*": ["./src/types"],
       "@styles": ["./src/assets/styles"],
-      "@img": ["./src/assets/img"],
-      "@hooks": ["./src/hooks"],
-      "@store": ["./src/store"],
-      "@router": ["./src/router"]
+      "@img/*": ["./src/assets/img/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@store/*": ["./src/store/*"],
+      "@router/*": ["./src/router/*"]
     },
     "types": ["node"],
     "target": "ESNext",
