@@ -13,6 +13,9 @@ export default defineConfig({
       { find: '@styles', replacement: path.resolve(__dirname, 'src/assets/styles') },
       { find: '@img', replacement: path.resolve(__dirname, 'src/assets/img') },
       { find: '@layout', replacement: path.resolve(__dirname, 'src/layout') },
+      { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
+      { find: '@store', replacement: path.resolve(__dirname, 'src/store') },
+      { find: '@router', replacement: path.resolve(__dirname, 'src/router') },
     ],
   },
   css: {
