@@ -1,6 +1,14 @@
-$light: ();
+$light: (
+  bg: $color-white,
+  headerBg: $color-black,
+  headerLinks: $color-white,
+);
 
-$dark: ();
+$dark: (
+  bg: $color-dark,
+  headerBg: $color-white,
+  headerLinks: $color-dark,
+);
 
 .dark-theme {
   @each $name, $color in $dark {
