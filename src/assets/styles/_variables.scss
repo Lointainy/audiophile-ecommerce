@@ -11,10 +11,10 @@ $color-red: #cd2c2c;
 
 /* Container & Media */
 
-$container-mw: 1400px !default; // width container
+$container-mw: 1110px !default; // width container
 $container-type: padding;
 $grid-columns: 12 !default; // numbers columns
-$grid-space: 68px; // margin
+$grid-space: 80px; // margin
 $grid-space-side: calc($grid-space / 2); // margin one side
 
 // DON`T TOUCH
