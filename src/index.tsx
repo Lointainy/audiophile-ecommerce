@@ -2,6 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 
+/* Store */
+import { store } from '@/store/store'
+import { Provider } from 'react-redux'
+
 /* Styles */
 import '@styles/main.scss'
 
@@ -20,6 +24,8 @@ library.add(faCartShopping, faPlus, faMinus, faFacebook, faInstagram, faTwitter,
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 )
