@@ -11,6 +11,13 @@ import '@fontsource/manrope/400.css'
 import '@fontsource/manrope/500.css'
 import '@fontsource/manrope/700.css'
 
+/* ICONS */
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faCartShopping, faChevronLeft, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCartShopping, faPlus, faMinus, faFacebook, faInstagram, faTwitter, faChevronLeft)
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
