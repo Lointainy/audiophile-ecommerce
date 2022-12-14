@@ -12,7 +12,7 @@ const ToggleMenu: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const handleDropdownMenu = () => {
-    dispatch(TOGGLE_NAV)
+    dispatch(TOGGLE_NAV())
   }
 
   return (
