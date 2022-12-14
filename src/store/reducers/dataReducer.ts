@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   colorTheme: 'light',
   overlay: false,
+  nav: false,
 }
 
 export const dataSlice = createSlice({
@@ -15,9 +16,12 @@ export const dataSlice = createSlice({
     SET_OVERLAY: (state, action) => {
       state.overlay = action.payload
     },
+    TOGGLE_NAV: (state) => {
+      state.nav = !state.nav
+    },
   },
 })
 
-export const { SET_THEME, SET_OVERLAY } = dataSlice.actions
+export const { SET_THEME, SET_OVERLAY, TOGGLE_NAV } = dataSlice.actions
 
 export default dataSlice.reducer
