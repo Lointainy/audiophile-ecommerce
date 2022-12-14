@@ -1,6 +1,6 @@
 /* Store */
 import { useAppDispatch } from '@hooks/useRedux'
-import { TOGGLE_NAV } from '@store/reducers/dataReducer'
+import { SET_OVERLAY, TOGGLE_NAV } from '@store/reducers/dataReducer'
 
 /* Styles */
 import style from './ToggleMenu.module.scss'
@@ -13,6 +13,7 @@ const ToggleMenu: React.FC = () => {
 
   const handleDropdownMenu = () => {
     dispatch(TOGGLE_NAV())
+    dispatch(SET_OVERLAY())
   }
 
   return (

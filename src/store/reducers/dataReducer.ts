@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { stat } from 'fs'
 
 const initialState = {
   colorTheme: 'light',
@@ -13,8 +14,8 @@ export const dataSlice = createSlice({
     SET_THEME: (state, action) => {
       state.colorTheme = action.payload
     },
-    SET_OVERLAY: (state, action) => {
-      state.overlay = action.payload
+    SET_OVERLAY: (state) => {
+      state.overlay = !state.overlay
     },
     TOGGLE_NAV: (state) => {
       state.nav = !state.nav
