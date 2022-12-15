@@ -1,7 +1,7 @@
 @import '@styles/main';
 
 .header {
-  @include container;
+  @include container(padding);
   height: 6.25rem;
   display: grid;
   grid-auto-flow: column;

@@ -70,17 +70,17 @@
 // DON`T TOUCH
 /* Container */
 
-@mixin container {
+@mixin container($type) {
   @each $name, $value in $grid-bp {
     @media (min-width: $value) {
       @if ($container-mw > $value) {
         @if ($value == 0px) {
-          #{$container-type}: 0 $grid-space-side;
+          #{$type}: 0 $grid-space-side;
         } @else {
-          #{$container-type}: 0 calc((100% - $value) / 2);
+          #{$type}: 0 calc((100% - $value) / 2);
         }
       } @else {
-        #{$container-type}: 0 calc((100% - $container-mw) / 2);
+        #{$type}: 0 calc((100% - $container-mw) / 2);
       }
     }
   }
