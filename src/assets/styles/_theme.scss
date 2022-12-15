@@ -1,13 +1,29 @@
 $light: (
   bg: $color-white,
+  title: $color-dark,
+  titleHover: $color-white,
+  subtitle: #{$color-black + '80'},
+  subtitleHover: #{$color-white + '80'},
+  // HEADER
   headerBg: $color-black,
   headerLinks: $color-white,
+  mobileMenuBg: $color-white,
+  mobileMenuItemBg: #{$color-dark + '0F'},
+  mobileMenuItemHoverBg: $color-black,
 );
 
 $dark: (
   bg: $color-dark,
+  title: $color-white,
+  titleHover: $color-black,
+  subtitle: #{$color-white + '80'},
+  subtitleHover: #{$color-black + '80'},
+  // HEADER
   headerBg: $color-white,
   headerLinks: $color-dark,
+  mobileMenuBg: $color-dark,
+  mobileMenuItemBg: #{$color-white + '0F'},
+  mobileMenuItemHoverBg: $color-white,
 );
 
 .dark-theme {
