@@ -27,6 +27,7 @@ import {
   faMoon,
   faPlus,
   faSun,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -40,7 +41,8 @@ library.add(
   faChevronRight,
   faSun,
   faMoon,
-  faBars
+  faBars,
+  faXmark
 )
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
