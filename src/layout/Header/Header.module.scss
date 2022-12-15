@@ -10,6 +10,26 @@
   background: color(headerBg);
   color: color(headerLinks);
   align-items: center;
+
+  @include media(md, mx) {
+    grid-template-columns: 40px minmax(auto, 1fr) 40px 40px;
+  }
+}
+
+.menu__mobile {
+  display: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    transition: $animate;
+    color: color(headerBg);
+    background: color(headerLinks);
+  }
+
+  @include media(md, mx) {
+    display: block;
+  }
 }
 
 .menu__desctop {
@@ -17,6 +37,10 @@
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   column-gap: 2.125rem;
+
+  @include media(md, mx) {
+    display: none;
+  }
 
   .menu__item {
     cursor: pointer;
