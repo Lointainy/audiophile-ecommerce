@@ -1,5 +1,5 @@
 /* Store */
-import { useAppDispatch } from '@hooks/useRedux'
+import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { SET_OVERLAY, TOGGLE_NAV } from '@store/reducers/dataReducer'
 
 /* Styles */
@@ -9,6 +9,7 @@ import style from './ToggleMenu.module.scss'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 const ToggleMenu: React.FC = () => {
+  const toggleNav = useAppSelector((store) => store.data.nav)
   const dispatch = useAppDispatch()
 
   const handleDropdownMenu = () => {
@@ -18,7 +19,7 @@ const ToggleMenu: React.FC = () => {
 
   return (
     <div className={style.toggle__icon} onClick={handleDropdownMenu}>
-      <Icon icon="bars" />
+      {!toggleNav ? <Icon icon="bars" /> : <Icon icon="xmark" />}
     </div>
   )
 }
