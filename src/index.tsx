@@ -22,13 +22,26 @@ import {
   faBars,
   faCartShopping,
   faChevronLeft,
+  faChevronRight,
   faMinus,
   faMoon,
   faPlus,
   faSun,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faCartShopping, faPlus, faMinus, faFacebook, faInstagram, faTwitter, faChevronLeft, faSun, faMoon, faBars)
+library.add(
+  faCartShopping,
+  faPlus,
+  faMinus,
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faChevronLeft,
+  faChevronRight,
+  faSun,
+  faMoon,
+  faBars
+)
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
