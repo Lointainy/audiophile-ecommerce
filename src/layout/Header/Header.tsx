@@ -6,12 +6,12 @@ import { ROUTES } from '@router/routes'
 import { NavLink } from 'react-router-dom'
 
 /* Components */
-import { DesctopNav, SwitchTheme, ToggleMenu } from '@components'
+import { CartToggle, DesctopNav, SwitchTheme, ToggleMenu } from '@components'
 
 const Header: React.FC = () => {
   return (
     <div className={style.header}>
-      <div className={style.menu__mobile}>
+      <div className={style.mobile}>
         <ToggleMenu />
       </div>
 
@@ -30,7 +30,9 @@ const Header: React.FC = () => {
         <SwitchTheme />
       </div>
 
-      <div className={style.cart}>c</div>
+      <div className={style.cart}>
+        <CartToggle />
+      </div>
     </div>
   )
 }
