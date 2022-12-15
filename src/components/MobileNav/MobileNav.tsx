@@ -5,6 +5,9 @@ import { useAppSelector } from '@hooks/useRedux'
 import { ROUTES } from '@router/routes'
 import { NavLink } from 'react-router-dom'
 
+/* Types */
+import { linksType } from '@types'
+
 /* Utils */
 import { links } from '@/utils/links'
 
@@ -17,7 +20,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 const MobileNav: React.FC = () => {
   const dropdown = useAppSelector((store) => store.data.nav)
 
-  const category = links.filter((i) => i.id != 1)
+  const category: linksType[] = links.filter((i) => i.id != 1)
 
   return (
     <>
