@@ -6,7 +6,7 @@ import { ROUTES } from '@router/routes'
 import { NavLink } from 'react-router-dom'
 
 /* Components */
-import { SwitchTheme, ToggleMenu } from '@components'
+import { DesctopNav, SwitchTheme, ToggleMenu } from '@components'
 
 const Header: React.FC = () => {
   return (
@@ -22,20 +22,9 @@ const Header: React.FC = () => {
         </NavLink>
       </div>
 
-      <ul className={style.menu__desctop}>
-        <li className={style.menu__item}>
-          <NavLink to={ROUTES.home}>home</NavLink>
-        </li>
-        <li className={style.menu__item}>
-          <NavLink to={ROUTES.category('headphones')}>headphones</NavLink>
-        </li>
-        <li className={style.menu__item}>
-          <NavLink to={ROUTES.category('speakers')}>speakers</NavLink>
-        </li>
-        <li className={style.menu__item}>
-          <NavLink to={ROUTES.category('earphones')}>earphones</NavLink>
-        </li>
-      </ul>
+      <div className={style.desktop}>
+        <DesctopNav />
+      </div>
 
       <div className={style.theme}>
         <SwitchTheme />
