@@ -22,7 +22,7 @@ export const dataSlice = createSlice({
       state.nav = !state.nav
     },
     TOGGLE_MODAL_CART: (state) => {
-      state.nav = !state.cartModal
+      state.cartModal = !state.cartModal
     },
   },
 })
