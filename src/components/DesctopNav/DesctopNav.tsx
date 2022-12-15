@@ -15,7 +15,7 @@ const DesctopNav: React.FC = () => {
         {links.map((item) => {
           return (
             <li className={style.item} key={item.id}>
-              <NavLink to={item.url == 'home' ? ROUTES.home : ROUTES.category(`${item.url}`)}>{item.title}</NavLink>
+              <NavLink to={item.title == 'home' ? ROUTES.home : ROUTES.category(`${item.url}`)}>{item.title}</NavLink>
             </li>
           )
         })}
