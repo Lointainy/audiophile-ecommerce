@@ -5,7 +5,6 @@
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 @mixin heading-xl {
@@ -13,35 +12,34 @@
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
+
 @mixin heading-l {
   font-size: 32px;
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
+
 @mixin heading-m {
   font-size: 28px;
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
+
 @mixin heading-s {
   font-size: 24px;
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
+
 @mixin heading-xs {
   font-size: 18px;
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 @mixin body-overline {
@@ -49,7 +47,6 @@
   font-family: Manrope;
   font-weight: 400;
   letter-spacing: 10px;
-  text-transform: uppercase;
 }
 
 @mixin body-subtitle {
@@ -57,7 +54,6 @@
   font-family: Manrope;
   font-weight: 700;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 @mixin body-main {
