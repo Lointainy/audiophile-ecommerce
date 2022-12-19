@@ -6,11 +6,12 @@ import Footer from './Footer/Footer'
 import Header from './Header/Header'
 
 /* Components */
-import { MobileNav, Modals, Overlay } from '@components'
+import { Modals } from '@components'
 
 const Layout: React.FC = () => {
   return (
     <>
+      <Modals />
       <Header />
       <Outlet />
       <Footer />

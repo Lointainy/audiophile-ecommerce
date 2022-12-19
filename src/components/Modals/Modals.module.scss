@@ -1,0 +1,10 @@
+@import '@styles/main';
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background: $color-black;
+  opacity: 0.4;
+}
