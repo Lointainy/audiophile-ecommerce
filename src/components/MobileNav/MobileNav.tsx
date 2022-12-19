@@ -1,12 +1,6 @@
-/* Store */
-import { useAppSelector } from '@hooks/useRedux'
-
 /* Route */
 import { ROUTES } from '@router/routes'
 import { NavLink } from 'react-router-dom'
-
-/* Types */
-import { linksType } from '@types'
 
 /* Utils */
 import { links } from '@/utils/links'
@@ -18,35 +12,27 @@ import style from './MobileNav.module.scss'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 const MobileNav: React.FC = () => {
-  const dropdown = useAppSelector((store) => store.data.nav)
-
-  const category: linksType[] = links.filter((i) => i.id != 1)
+  const category = links.filter((i) => i.id != 1)
 
   return (
-    <>
-      {dropdown ? (
-        <nav className={style.navigation}>
-          <ul className={style.list}>
-            {category.map((item) => {
-              return (
-                <li key={item.id} className={style.item}>
-                  <NavLink to={ROUTES.category(`${item.url}`)} className={style.field}>
-                    <img src={`${item.img}`} alt="" className={style.img} />
-                    <div className={style.title}>{item.title}</div>
-                    <div className={style.subtitle}>
-                      <span>SHOP</span>
-                      <Icon icon="chevron-right" className={style.icon} />
-                    </div>
-                  </NavLink>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      ) : (
-        ''
-      )}
-    </>
+    <div className={style.field}>
+      <ul className={style.list}>
+        {category.map((item) => {
+          return (
+            <li key={item.id} className={style.item}>
+              <NavLink to={ROUTES.category(`${item.url}`)} className={style.item__field}>
+                <img src={`${item.img}`} alt="" className={style.img} />
+                <div className={style.title}>{item.title}</div>
+                <div className={style.subtitle}>
+                  <span>SHOP</span>
+                  <Icon icon="chevron-right" className={style.icon} />
+                </div>
+              </NavLink>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   )
 }
 export default MobileNav

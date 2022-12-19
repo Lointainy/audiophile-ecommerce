@@ -2,24 +2,44 @@
 
 .header {
   @include container(padding);
-  height: 6.25rem;
+  position: relative;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: minmax(auto, 300px) 1fr 40px;
+  grid-template-areas: 'logo navigation theme cart';
   column-gap: 2.125rem;
+  height: 6.25rem;
   background: color(headerBg);
   color: color(headerLinks);
   align-items: center;
 
   @include media(md, mx) {
+    grid-template-areas: 'navigation logo theme cart';
     grid-template-columns: 40px minmax(auto, 1fr) 40px 40px;
     column-gap: 0.5rem;
   }
 }
 
+.logo {
+  grid-area: logo;
+}
+
+.desctop,
+.mobile {
+  grid-area: navigation;
+}
+
+.theme {
+  grid-area: theme;
+}
+
+.cart {
+  grid-area: cart;
+}
+
 /* Button */
 
-.mobile,
+.toggle,
 .theme,
 .cart {
   border-radius: 8px;

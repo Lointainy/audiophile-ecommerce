@@ -1,20 +1,25 @@
 @import '@styles/main';
 
-.navigation {
-  --imgMaxSize: 140px;
-
+.field {
   position: absolute;
+  top: 100px;
+  left: 0;
   width: 100%;
-  background: color(mobileMenuBg);
-  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .list {
-  padding: 2.5rem;
+  --imgMaxSize: 140px;
+  --padding: 2.5rem;
+  @include container(padding);
+  width: auto;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   column-gap: 0.625rem;
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: color(mobileMenuBg);
 
   @include media(sm, mx) {
     grid-auto-flow: row;
@@ -26,7 +31,7 @@
   margin-top: calc(var(--imgMaxSize) / 2);
 }
 
-.field {
+.item__field {
   position: relative;
   display: grid;
   grid-auto-flow: row;
