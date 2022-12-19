@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { stat } from 'fs'
 
 const initialState = {
   colorTheme: 'light',
   nav: false,
+  modal: {
+    ModalType: '',
+  },
 }
 
 export const dataSlice = createSlice({
@@ -16,9 +18,12 @@ export const dataSlice = createSlice({
     TOGGLE_NAV: (state) => {
       state.nav = !state.nav
     },
+    OPEN_MODAL: (state, action) => {
+      state.modal.ModalType = action.payload
+    },
   },
 })
 
-export const { SET_THEME, TOGGLE_NAV } = dataSlice.actions
+export const { SET_THEME, TOGGLE_NAV, OPEN_MODAL } = dataSlice.actions
 
 export default dataSlice.reducer
