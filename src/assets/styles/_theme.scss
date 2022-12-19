@@ -4,12 +4,18 @@ $light: (
   titleHover: $color-white,
   subtitle: #{$color-black + '80'},
   subtitleHover: #{$color-white + '80'},
+  button: $color-orange,
+  buttonHover: $color-orange-light,
+  buttonText: $color-white,
   // HEADER
   headerBg: $color-black,
   headerLinks: $color-white,
   mobileMenuBg: $color-white,
   mobileMenuItemBg: #{$color-dark + '0F'},
   mobileMenuItemHoverBg: $color-black,
+  //MODALS
+  modalBg: $color-white,
+  modalFieldBg: $color-silver,
 );
 
 $dark: (
@@ -18,12 +24,18 @@ $dark: (
   titleHover: $color-black,
   subtitle: #{$color-white + '80'},
   subtitleHover: #{$color-black + '80'},
+  button: $color-orange,
+  buttonHover: $color-orange-light,
+  buttonText: $color-white,
   // HEADER
   headerBg: $color-white,
   headerLinks: $color-dark,
   mobileMenuBg: $color-dark,
   mobileMenuItemBg: #{$color-white + '0F'},
   mobileMenuItemHoverBg: $color-white,
+  //MODALS
+  modalBg: $color-dark,
+  modalFieldBg: #{$color-white + '40'},
 );
 
 .dark-theme {
