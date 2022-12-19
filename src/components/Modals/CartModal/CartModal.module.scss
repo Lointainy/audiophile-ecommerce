@@ -1,0 +1,143 @@
+@import '@styles/main';
+
+.cart {
+  @include container(padding);
+  position: relative;
+}
+
+.field {
+  position: absolute;
+  right: 0;
+  top: 7.75rem;
+  background: color(modalBg);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  min-width: 23.75rem;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-template-rows: repeat(3, max-content) 48px;
+  row-gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    @include heading-xs;
+    color: color(title);
+  }
+
+  .remove {
+    @include body-main;
+    color: color(subtitle);
+
+    &:hover {
+      cursor: pointer;
+      color: $color-orange;
+      transition: $animate;
+    }
+  }
+}
+
+.list {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 1.5rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 64px 1fr 96px;
+  grid-template-rows: repeat(2, 32px);
+  align-items: center;
+  gap: 0rem 1rem;
+  grid-template-areas:
+    'img name quantity'
+    'img price quantity';
+}
+
+.img {
+  --paddingImg: 0.75rem;
+  grid-area: img;
+  background: color(modalFieldBg);
+  border-radius: 8px;
+  height: calc(100% - (2 * var(--paddingImg)));
+  padding: var(--paddingImg);
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.name {
+  grid-area: name;
+  @include body-subtitle;
+  font-size: 1rem;
+  color: color(title);
+  text-transform: uppercase;
+}
+
+.price {
+  grid-area: price;
+  @include body-subtitle;
+  font-size: 0.875rem;
+  color: color(subtitle);
+}
+
+.quantity {
+  @include body-subtitle;
+  grid-area: quantity;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 32px);
+  height: 32px;
+  background: color(modalFieldBg);
+  text-align: center;
+
+  .button {
+    color: color(title);
+    opacity: 0.25;
+
+    &:hover {
+      opacity: 1;
+      transition: $animate;
+      cursor: pointer;
+    }
+  }
+}
+
+.total {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    @include body-main;
+    color: color(subtitle);
+    text-transform: uppercase;
+  }
+
+  &__price {
+    @include heading-xs;
+    color: color(title);
+  }
+}
+
+.checkout {
+  @include body-subtitle;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: color(button);
+  color: color(buttonText);
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    transition: $animate;
+    background: color(buttonHover);
+  }
+}
