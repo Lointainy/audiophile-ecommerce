@@ -75,12 +75,15 @@
     @media (min-width: $value) {
       @if ($container-mw > $value) {
         @if ($value == 0px) {
-          #{$type}: 0 $grid-space-side;
+          #{$type}-left: $grid-space-side;
+          #{$type}-right: $grid-space-side;
         } @else {
-          #{$type}: 0 calc((100% - $value) / 2);
+          #{$type}-left: calc((100% - $value) / 2);
+          #{$type}-right: calc((100% - $value) / 2);
         }
       } @else {
-        #{$type}: 0 calc((100% - $container-mw) / 2);
+        #{$type}-left: calc((100% - $container-mw) / 2);
+        #{$type}-right: calc((100% - $container-mw) / 2);
       }
     }
   }
