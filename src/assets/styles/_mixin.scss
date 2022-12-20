@@ -73,6 +73,9 @@
   background: $color-orange;
   color: $color-white;
   text-transform: uppercase;
+  height: 3rem;
+  padding: 0 1.875rem;
+  width: fit-content;
 
   &:hover {
     cursor: pointer;
