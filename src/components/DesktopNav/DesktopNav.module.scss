@@ -5,6 +5,11 @@
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   column-gap: 2.125rem;
+
+  @include media(sm, mx) {
+    grid-auto-flow: row;
+    row-gap: 1rem;
+  }
 }
 
 .item {
