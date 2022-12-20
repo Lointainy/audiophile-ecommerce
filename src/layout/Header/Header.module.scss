@@ -1,18 +1,22 @@
 @import '@styles/main';
 
 header {
-  @include container(padding);
   position: relative;
+  background: color(headerBg);
+  z-index: $i-header;
+}
+
+.field {
+  @include container(margin);
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: minmax(auto, 300px) 1fr 40px;
   grid-template-areas: 'logo navigation theme cart';
   column-gap: 2.125rem;
   height: 6.25rem;
-  background: color(headerBg);
   color: color(headerLinks);
   align-items: center;
-  z-index: $i-header;
+  border-bottom: 1px solid color(headerBorder);
 
   @include media(md, mx) {
     grid-template-areas: 'navigation logo theme cart';
