@@ -2,7 +2,6 @@
 
 footer {
   @include container(padding);
-  position: fixed;
   z-index: $i-footer;
   bottom: 0;
   display: grid;
