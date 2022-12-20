@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   const mobileNav = useAppSelector((store) => store.data.nav)
 
   return (
-    <header className={style.header}>
+    <header>
       <div className={style.logo}>
         <NavLink to={ROUTES.home}>
           <img src="" alt="" />

@@ -1,6 +1,6 @@
 @import '@styles/main';
 
-.header {
+header {
   @include container(padding);
   position: relative;
   display: grid;
