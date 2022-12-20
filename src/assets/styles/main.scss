@@ -3,3 +3,7 @@
 @import 'mixin';
 @import 'theme';
 @import 'basic';
+
+.app {
+  background: color(bg);
+}
