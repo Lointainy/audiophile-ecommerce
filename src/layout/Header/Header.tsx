@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   const mobileNav = useAppSelector((store) => store.data.nav)
 
   return (
-    <div className={style.header}>
+    <header className={style.header}>
       <div className={style.logo}>
         <NavLink to={ROUTES.home}>
           <img src="" alt="" />
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
       <div className={style.cart}>
         <CartToggle />
       </div> */}
-    </div>
+    </header>
   )
 }
 
