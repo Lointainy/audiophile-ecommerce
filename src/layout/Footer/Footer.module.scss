@@ -1,0 +1,88 @@
+@import '@styles/main';
+
+footer {
+  @include container(padding);
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: color(footerBg);
+  color: color(footerLinks);
+  padding-top: 4.6875rem;
+  padding-bottom: 3rem;
+  row-gap: 2rem;
+  grid-template-areas:
+    'logo navigation'
+    'desc social'
+    'copyright copyright';
+
+  @include media(md, mx) {
+    grid-template-areas:
+      'logo logo'
+      'navigation navigation'
+      'desc desc'
+      'copyright social';
+  }
+
+  @include media(sm, mx) {
+    text-align: center;
+    grid-template-areas:
+      'logo logo'
+      'navigation navigation'
+      'desc desc'
+      'copyright copyright'
+      'social social';
+  }
+}
+
+.logo,
+.navigation,
+.social {
+  color: color(footerLinks);
+}
+
+.desc,
+.copyright {
+  color: color(subtitleHover);
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.navigation {
+  grid-area: navigation;
+  display: grid;
+  justify-content: end;
+  @include media(md, mx) {
+    justify-content: start;
+  }
+  @include media(sm, mx) {
+    justify-content: center;
+  }
+}
+
+.desc {
+  grid-area: desc;
+}
+
+.social {
+  grid-area: social;
+  @include body-main;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  align-items: flex-end;
+  column-gap: 1rem;
+
+  @include media(sm, mx) {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.copyright {
+  grid-area: copyright;
+  @include body-main;
+  font-weight: 700;
+}
