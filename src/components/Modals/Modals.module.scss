@@ -6,6 +6,7 @@
   min-height: 100vh;
   height: auto;
   background: #{$color-black + '66'};
+  z-index: $i-modal;
 }
 
 .modal {

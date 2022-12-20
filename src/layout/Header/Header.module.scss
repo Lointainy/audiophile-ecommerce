@@ -12,6 +12,7 @@ header {
   background: color(headerBg);
   color: color(headerLinks);
   align-items: center;
+  z-index: $i-header;
 
   @include media(md, mx) {
     grid-template-areas: 'navigation logo theme cart';
