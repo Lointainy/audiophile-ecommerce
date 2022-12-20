@@ -1,4 +1,5 @@
 export { default as CartToggle } from './CartToggle/CartToggle'
+export { default as CategoryList } from './CategoryList/CategoryList'
 export { default as DesktopNav } from './DesktopNav/DesktopNav'
 export { default as HeaderContent } from './HeaderContent/HeaderContent'
 export { default as MobileNav } from './MobileNav/MobileNav'

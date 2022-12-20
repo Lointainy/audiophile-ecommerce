@@ -1,10 +1,11 @@
 /* Components */
-import { HeaderContent } from '@components'
+import { CategoryList, HeaderContent } from '@components'
 
 const HomePage: React.FC = () => {
   return (
     <>
       <HeaderContent />
+      <CategoryList />
     </>
   )
 }
