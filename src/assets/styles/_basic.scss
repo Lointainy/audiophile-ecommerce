@@ -1,0 +1,31 @@
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  @include heading-xxl;
+}
+
+h2 {
+  @include heading-xl;
+}
+
+h3 {
+  @include heading-l;
+}
+
+h4 {
+  @include heading-m;
+}
+
+h5 {
+  @include heading-s;
+}
+
+h6 {
+  @include heading-xs;
+}
+
+p {
+  @include body-main;
+}
