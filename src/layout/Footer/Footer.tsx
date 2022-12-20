@@ -25,11 +25,17 @@ const Footer: React.FC = () => {
             facility - we’re open 7 days a week.
           </p>
         </div>
-        <div className={style.social}>
-          <Icon icon={['fab', 'facebook']} />
-          <Icon icon={['fab', 'twitter']} />
-          <Icon icon={['fab', 'instagram']} />
-        </div>
+        <ul className={style.social}>
+          <li>
+            <Icon icon={['fab', 'facebook']} />
+          </li>
+          <li>
+            <Icon icon={['fab', 'twitter']} />
+          </li>
+          <li>
+            <Icon icon={['fab', 'instagram']} />
+          </li>
+        </ul>
         <div className={style.copyright}>
           <span>Copyright 2021. All Rights Reserved</span>
         </div>

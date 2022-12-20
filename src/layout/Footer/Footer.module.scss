@@ -68,12 +68,20 @@ footer {
 
 .social {
   grid-area: social;
-  @include body-main;
+  @include heading-s;
   display: grid;
   grid-auto-flow: column;
   justify-content: end;
   align-items: flex-end;
   column-gap: 1rem;
+
+  li {
+    &:hover {
+      cursor: pointer;
+      color: $color-orange;
+      transition: $animate;
+    }
+  }
 
   @include media(sm, mx) {
     justify-content: center;
