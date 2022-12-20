@@ -63,7 +63,26 @@
   letter-spacing: 0px;
 }
 
+/* Button */
+
+@mixin btn-basic {
+  @include body-subtitle;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: $color-orange;
+  color: $color-white;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    transition: $animate;
+    background: $color-orange-light;
+  }
+}
+
 // DON`T TOUCH
+
 /* Container */
 
 @mixin container($type) {
