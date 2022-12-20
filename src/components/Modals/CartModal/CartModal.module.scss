@@ -127,17 +127,5 @@
 }
 
 .checkout {
-  @include body-subtitle;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  background: color(button);
-  color: color(buttonText);
-  text-transform: uppercase;
-
-  &:hover {
-    cursor: pointer;
-    transition: $animate;
-    background: color(buttonHover);
-  }
+  @include btn-basic;
 }

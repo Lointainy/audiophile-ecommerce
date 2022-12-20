@@ -4,9 +4,6 @@ $light: (
   titleHover: $color-white,
   subtitle: #{$color-black + '80'},
   subtitleHover: #{$color-white + '80'},
-  button: $color-orange,
-  buttonHover: $color-orange-light,
-  buttonText: $color-white,
   // HEADER
   headerBg: $color-black,
   headerBorder: #{$color-white + '33'},
@@ -17,7 +14,6 @@ $light: (
   //FOOTER
   footerBg: $color-black,
   footerLinks: $color-white,
-
   //MODALS
   modalBg: $color-white,
   modalFieldBg: $color-silver,
@@ -29,9 +25,6 @@ $dark: (
   titleHover: $color-black,
   subtitle: #{$color-white + '80'},
   subtitleHover: #{$color-black + '80'},
-  button: $color-orange,
-  buttonHover: $color-orange-light,
-  buttonText: $color-white,
   // HEADER
   headerBg: $color-white,
   headerBorder: #{$color-black + '33'},
