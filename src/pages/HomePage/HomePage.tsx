@@ -1,5 +1,12 @@
+/* Components */
+import { HeaderContent } from '@components'
+
 const HomePage: React.FC = () => {
-  return <>HomePage </>
+  return (
+    <>
+      <HeaderContent />
+    </>
+  )
 }
 
 export default HomePage
