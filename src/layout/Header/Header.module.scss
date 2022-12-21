@@ -2,7 +2,7 @@
 
 header {
   position: relative;
-  background: color(headerBg);
+  background: color(bgInvert);
   z-index: $i-header;
 }
 
@@ -14,9 +14,9 @@ header {
   grid-template-areas: 'logo navigation theme cart';
   column-gap: 2.125rem;
   height: 6.25rem;
-  color: color(headerLinks);
+  color: color(titleInvert);
   align-items: center;
-  border-bottom: 1px solid color(headerBorder);
+  border-bottom: 1px solid color(border);
 
   @include media(md, mx) {
     grid-template-areas: 'navigation logo theme cart';
@@ -52,8 +52,8 @@ header {
 
   &:hover {
     transition: $animate;
-    color: color(headerBg);
-    background: color(headerLinks);
+    color: color(bgInvert);
+    background: color(titleInvert);
   }
 }
 

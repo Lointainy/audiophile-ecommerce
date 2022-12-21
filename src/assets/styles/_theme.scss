@@ -1,43 +1,29 @@
 $light: (
   bg: $color-white,
+  bgInvert: $color-dark,
   title: $color-dark,
-  titleHover: $color-white,
+  titleInvert: $color-white,
   subtitle: #{$color-black + '80'},
-  subtitleHover: #{$color-white + '80'},
-  // HEADER
-  headerBg: $color-dark,
-  headerBorder: #{$color-white + '33'},
-  headerLinks: $color-white,
-  mobileMenuBg: $color-white,
-  mobileMenuItemBg: #{$color-dark + '0F'},
-  mobileMenuItemHoverBg: $color-black,
-  //FOOTER
-  footerBg: $color-dark,
-  footerLinks: $color-white,
-  //MODALS
-  modalBg: $color-white,
-  modalFieldBg: $color-silver,
+  subtitleInvert: #{$color-white + '80'},
+  border: #{$color-white + '33'},
+  fieldBg: #{$color-dark + '0F'},
+  fieldBgInvert: $color-black,
+  inputBg: $color-silver,
+  pic: $color-silver,
 );
 
 $dark: (
   bg: $color-dark,
+  bgInvert: $color-white,
   title: $color-white,
-  titleHover: $color-black,
+  titleInvert: $color-dark,
   subtitle: #{$color-white + '80'},
-  subtitleHover: #{$color-black + '80'},
-  // HEADER
-  headerBg: $color-white,
-  headerBorder: #{$color-black + '33'},
-  headerLinks: $color-dark,
-  mobileMenuBg: $color-dark,
-  mobileMenuItemBg: #{$color-white + '0F'},
-  mobileMenuItemHoverBg: $color-white,
-  //FOOTER
-  footerBg: $color-white,
-  footerLinks: $color-dark,
-  //MODALS
-  modalBg: $color-dark,
-  modalFieldBg: #{$color-white + '40'},
+  subtitleInvert: #{$color-black + '80'},
+  border: #{$color-black + '33'},
+  fieldBg: #{$color-white + '0F'},
+  fieldBgInvert: $color-white,
+  inputBg: #{$color-white + '40'},
+  pic: #{$color-white + '40'},
 );
 
 .dark-theme {

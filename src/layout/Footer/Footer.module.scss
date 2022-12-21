@@ -6,8 +6,8 @@ footer {
   bottom: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background: color(footerBg);
-  color: color(footerLinks);
+  background: color(bgInvert);
+  color: color(titleInvert);
   padding-top: 4.6875rem;
   padding-bottom: 3rem;
   row-gap: 2rem;
@@ -38,12 +38,12 @@ footer {
 .logo,
 .navigation,
 .social {
-  color: color(footerLinks);
+  color: color(titleInvert);
 }
 
 .desc,
 .copyright {
-  color: color(subtitleHover);
+  color: color(subtitleInvert);
 }
 
 .logo {

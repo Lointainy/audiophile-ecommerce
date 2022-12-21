@@ -6,12 +6,13 @@
 }
 
 .field {
+  --padding: 2rem;
   position: absolute;
   right: 0;
   top: 7.75rem;
-  background: color(modalBg);
+  background: color(bg);
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: var(--padding);
   min-width: 23.75rem;
   display: grid;
   grid-auto-flow: row;
@@ -61,7 +62,7 @@
 .img {
   --paddingImg: 0.75rem;
   grid-area: img;
-  background: color(modalFieldBg);
+  background: color(pic);
   border-radius: 8px;
   height: calc(100% - (2 * var(--paddingImg)));
   padding: var(--paddingImg);
@@ -94,8 +95,12 @@
   grid-auto-flow: column;
   grid-template-columns: repeat(3, 32px);
   height: 32px;
-  background: color(modalFieldBg);
+  background: color(inputBg);
   text-align: center;
+
+  .number {
+    color: color(title);
+  }
 
   .button {
     color: color(title);
@@ -128,4 +133,5 @@
 
 .checkout {
   @include btn-basic;
+  width: auto;
 }

@@ -34,22 +34,22 @@
   row-gap: 1rem;
   text-align: center;
   border-radius: 0.5rem;
-  background: color(mobileMenuItemBg);
+  background: color(fieldBg);
   padding-top: calc(var(--imgMaxSize) / 2);
   padding-bottom: 1.375rem;
 
   &:hover {
     cursor: pointer;
     transition: $animate;
-    background: color(mobileMenuItemHoverBg);
+    background: color(bgInvert);
 
     .title {
-      color: color(titleHover);
+      color: color(titleInvert);
     }
 
     .subtitle {
       span {
-        color: color(subtitleHover);
+        color: color(subtitleInvert);
       }
     }
   }
