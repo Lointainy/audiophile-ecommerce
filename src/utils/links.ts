@@ -8,18 +8,18 @@ export const links = [
     id: 2,
     title: 'Headphones',
     url: 'headphones',
-    img: '/img/shared/desktop/image-category-thumbnail-headphones.png',
+    img: '/assets/shared/desktop/image-category-thumbnail-headphones.png',
   },
   {
     id: 3,
     title: 'Speakers',
     url: 'speakers',
-    img: '/img/shared/desktop/image-category-thumbnail-speakers.png',
+    img: '/assets/shared/desktop/image-category-thumbnail-speakers.png',
   },
   {
     id: 4,
     title: 'Earphones',
     url: 'earphones',
-    img: '/img/shared/desktop/image-category-thumbnail-earphones.png',
+    img: '/assets/shared/desktop/image-category-thumbnail-earphones.png',
   },
 ]
