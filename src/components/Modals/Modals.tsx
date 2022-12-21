@@ -1,6 +1,6 @@
 /* Store */
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { CLOSE_MODAL } from '@store/reducers/dataReducer'
+import { CLOSE_MODAL } from '@store/reducers/modalSlice'
 
 /* Styles */
 import style from './Modals.module.scss'
@@ -10,7 +10,7 @@ import CartModal from './CartModal/CartModal'
 
 const Modals: React.FC = () => {
   const dispatch = useAppDispatch()
-  const getModal = useAppSelector((store) => store.data.modal)
+  const getModal = useAppSelector((store) => store.modal)
 
   return (
     <>

@@ -1,6 +1,6 @@
 /* Store */
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { TOGGLE_NAV } from '@store/reducers/dataReducer'
+import { TOGGLE_NAV } from '@store/reducers/uiSlice'
 
 /* Styles */
 import style from './ToggleMenu.module.scss'
@@ -9,7 +9,7 @@ import style from './ToggleMenu.module.scss'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 const ToggleMenu: React.FC = () => {
-  const toggleNav = useAppSelector((store) => store.data.nav)
+  const toggleNav = useAppSelector((store) => store.ui.nav)
   const dispatch = useAppDispatch()
 
   const handleDropdownMenu = () => {

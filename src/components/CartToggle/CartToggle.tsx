@@ -1,6 +1,6 @@
 /* Store */
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { CLOSE_MODAL, OPEN_MODAL } from '@store/reducers/dataReducer'
+import { CLOSE_MODAL, OPEN_MODAL } from '@store/reducers/modalSlice'
 
 /* Style */
 import style from './CartToggle.module.scss'
@@ -10,7 +10,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 const CartToggle: React.FC = () => {
   const dispatch = useAppDispatch()
-  const toggle = useAppSelector((store) => store.data.modal.ModalOpen)
+  const toggle = useAppSelector((store) => store.modal.ModalOpen)
 
   const handleToggleCart = () => {
     !toggle ? dispatch(OPEN_MODAL('cart')) : dispatch(CLOSE_MODAL())

@@ -5,7 +5,7 @@ import { useTheme } from '@hooks/useTheme'
 
 /* Store */
 import { useAppDispatch } from '@hooks/useRedux'
-import { SET_THEME } from '@store/reducers/dataReducer'
+import { SET_THEME } from '@store/reducers/uiSlice'
 
 /* Style */
 import style from './SwitchTheme.module.scss'

@@ -12,7 +12,7 @@ import style from './Header.module.scss'
 import { CartToggle, DesktopNav, MobileNav, SwitchTheme, ToggleMenu } from '@components'
 
 const Header: React.FC = () => {
-  const mobileNav = useAppSelector((store) => store.data.nav)
+  const mobileNav = useAppSelector((store) => store.ui.nav)
 
   return (
     <header>

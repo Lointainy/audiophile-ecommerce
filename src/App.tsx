@@ -6,7 +6,7 @@ import { RouterProvider } from 'react-router-dom'
 import { useAppSelector } from '@hooks/useRedux'
 
 const App: React.FC = () => {
-  const theme = useAppSelector((store) => store.data.colorTheme)
+  const theme = useAppSelector((store) => store.ui.colorTheme)
 
   return (
     <div className={`app ${theme}`}>
