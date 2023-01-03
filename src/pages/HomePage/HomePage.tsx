@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
     <>
       <HeaderContent />
       <div className={styles.content}>
-        {/* <CategoryList /> */}
+        <CategoryList />
         <HomeGallery />
       </div>
     </>
