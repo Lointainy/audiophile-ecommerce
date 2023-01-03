@@ -8,7 +8,7 @@ import { getGalleryProducts, getNewProduct } from '@store/reducers/dataSlice'
 import { CategoryList, HeaderContent, HomeGallery } from '@components'
 
 /* Styles */
-import styles from './HomePage.module.scss'
+import style from './HomePage.module.scss'
 
 const HomePage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <HeaderContent />
-      <div className={styles.content}>
+      <div className={style.content}>
         <CategoryList />
         <HomeGallery />
       </div>
