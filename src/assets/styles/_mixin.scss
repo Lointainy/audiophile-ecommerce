@@ -93,6 +93,24 @@
   gap: 0.875rem;
   text-transform: uppercase;
 
+  &:hover {
+    cursor: pointer;
+    transition: $animate;
+  }
+}
+
+@mixin btn-black {
+  @include body-subtitle;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: color(bgInvert);
+  color: color(titleInvert);
+  text-transform: uppercase;
+  height: 3rem;
+  padding: 0 1.875rem;
+  width: fit-content;
+
   span {
     color: color(subtitle);
   }
@@ -100,6 +118,8 @@
   &:hover {
     cursor: pointer;
     transition: $animate;
+    color: $color-white;
+    background: #4c4c4c;
   }
 }
 
