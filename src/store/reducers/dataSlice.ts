@@ -34,23 +34,23 @@ export const dataSlice = createSlice({
       })
       .addCase(getProducts.fulfilled, (state, action) => {
         state.products = action.payload
-        console.log(state.products)
+        console.log('products', state.products)
       })
     builder
       .addCase(getNewProduct.pending, (state) => {
-        state.product = {}
+        state.newProduct = {}
       })
       .addCase(getNewProduct.fulfilled, (state, action) => {
-        state.product = action.payload
-        console.log(state.product)
+        state.newProduct = action.payload
+        console.log('new', state.newProduct)
       })
     builder
       .addCase(getGalleryProducts.pending, (state) => {
-        state.galleryProducts = {}
+        state.galleryProducts = []
       })
       .addCase(getGalleryProducts.fulfilled, (state, action) => {
         state.galleryProducts = action.payload
-        console.log(state.galleryProducts)
+        console.log('gallery', state.galleryProducts)
       })
   },
 })
