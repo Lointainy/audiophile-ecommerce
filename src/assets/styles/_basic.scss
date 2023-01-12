@@ -29,3 +29,7 @@ h6 {
 p {
   @include body-main;
 }
+
+.accent {
+  color: $color-orange;
+}
