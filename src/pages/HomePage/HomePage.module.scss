@@ -1,5 +1,7 @@
+@import '@styles/main';
+
 .content {
   display: grid;
   grid-auto-flow: row;
-  row-gap: 3.5rem;
+  row-gap: $margin-items;
 }
