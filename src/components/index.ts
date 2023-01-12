@@ -1,5 +1,6 @@
 export { default as CategoryList } from './CategoryList/CategoryList'
 export { default as HeaderContent } from './HeaderContent/HeaderContent'
+export { default as InfoCompany } from './InfoCompany/InfoCompany'
 export { default as Modals } from './Modals/Modals'
 export { default as CartToggle } from './NavBar/CartToggle/CartToggle'
 export { default as DesktopNav } from './NavBar/DesktopNav/DesktopNav'

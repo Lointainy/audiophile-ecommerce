@@ -6,7 +6,7 @@ import Footer from './Footer/Footer'
 import Header from './Header/Header'
 
 /* Components */
-import { Modals } from '@components'
+import { InfoCompany, Modals } from '@components'
 
 const Layout: React.FC = () => {
   return (
@@ -14,6 +14,7 @@ const Layout: React.FC = () => {
       <Modals />
       <Header />
       <Outlet />
+      <InfoCompany />
       <Footer />
     </>
   )
