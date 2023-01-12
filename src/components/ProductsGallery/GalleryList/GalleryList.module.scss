@@ -1,0 +1,22 @@
+@import '@styles/main';
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 35rem repeat(2, 20rem);
+  row-gap: 3rem;
+}
+
+/* MEDIA */
+
+@include media(md, mx) {
+  .list {
+    grid-template-rows: 45rem repeat(2, 20rem);
+  }
+}
+
+@include media(sm, mx) {
+  .list {
+    grid-template-rows: 37.5rem 20rem 26.5rem;
+  }
+}

@@ -1,25 +1,17 @@
-/* Route */
-import { ROUTES } from '@router/routes'
-import { NavLink } from 'react-router-dom'
-
 /* Store */
 import { useAppSelector } from '@hooks/useRedux'
 
-/* Hooks */
-import { useMediaQuery } from '@hooks/useMediaQuery'
-
 /* Styles */
+import GalleryList from './GalleryList/GalleryList'
 import style from './ProductsGallery.module.scss'
 
 const ProductsGallery: React.FC = () => {
   const galleryList = useAppSelector((store) => store.data.galleryProducts)
-  const {
-    mediaQuery: { name: picSize },
-  } = useMediaQuery()
 
   return (
     <div className={style.gallery}>
-      <ul className={style.list}>
+      <GalleryList products={galleryList} />
+      {/* <ul className={style.list}>
         {galleryList.map((item, index) => {
           return index === 0 ? (
             <li key={item.id} className={style.item}>
@@ -53,7 +45,7 @@ const ProductsGallery: React.FC = () => {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
     </div>
   )
 }
