@@ -26,14 +26,17 @@ export const getGalleryProducts = createAsyncThunk('products/getGalleryProducts'
   return data
 })
 
-export const getProductsByCategory = createAsyncThunk('products/getProductsByCategory', async (categoryItems) => {
-  const { data } = await axios.get(`${API_URL}/products`, {
-    params: {
-      category: categoryItems,
-    },
-  })
-  return data
-})
+export const getProductsByCategory = createAsyncThunk(
+  'products/getProductsByCategory',
+  async (categoryItems: string | undefined) => {
+    const { data } = await axios.get(`${API_URL}/products`, {
+      params: {
+        category: categoryItems,
+      },
+    })
+    return data
+  }
+)
 
 export const dataSlice = createSlice({
   name: 'data',
@@ -55,7 +58,7 @@ export const dataSlice = createSlice({
         state.category = []
       })
       .addCase(getProductsByCategory.fulfilled, (state, action) => {
-        state.category = action.payload
+        state.category = action.payload.sort((a, b) => b.new - a.new)
         console.log('category', state.category)
       })
     /* Get new products */
