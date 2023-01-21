@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <HeaderContent />
-      <div className={style.content}>
+      <div className={style.page}>
         <CategoryList />
         <ProductsGallery />
       </div>
