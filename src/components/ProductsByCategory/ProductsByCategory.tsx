@@ -35,7 +35,7 @@ const ProductsByCategory: React.FC = () => {
               </div>
 
               <p className={style.desc}>{product.description}</p>
-              <NavLink to={ROUTES.product(`${product.id}`)} className={style.btn}>
+              <NavLink to={ROUTES.product(`${product.slug}`)} className={style.btn}>
                 see product
               </NavLink>
             </div>
