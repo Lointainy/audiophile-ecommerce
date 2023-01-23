@@ -1,0 +1,20 @@
+@import '@styles/main';
+
+.page {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: $margin-items;
+}
+
+.field {
+  background: color(bgInvert);
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: color(titleInvert);
+  text-transform: uppercase;
+}
