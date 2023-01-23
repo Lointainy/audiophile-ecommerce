@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:3000/api'
 
 const initialState = {
   products: [],
-  product: '',
+  product: {},
   newProduct: {},
   galleryProducts: [],
   category: [],
@@ -13,6 +13,11 @@ const initialState = {
 
 export const getProducts = createAsyncThunk('products/getProducts', async () => {
   const { data } = await axios.get(`${API_URL}/products`)
+  return data
+})
+
+export const getProduct = createAsyncThunk('products/getProduct', async (name: undefined | string) => {
+  const { data } = await axios.get(`${API_URL}/products/${name}`)
   return data
 })
 
@@ -43,6 +48,15 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    /* Get one product */
+    builder
+      .addCase(getProduct.pending, (state) => {
+        state.product = {}
+      })
+      .addCase(getProduct.fulfilled, (state, action) => {
+        state.product = action.payload
+        console.log('product', state.product)
+      })
     /* Get all products */
     builder
       .addCase(getProducts.pending, (state) => {
@@ -58,7 +72,7 @@ export const dataSlice = createSlice({
         state.category = []
       })
       .addCase(getProductsByCategory.fulfilled, (state, action) => {
-        state.category = action.payload.sort((a, b) => b.new - a.new)
+        state.category = action.payload.sort((a: any, b: any) => b.new - a.new)
         console.log('category', state.category)
       })
     /* Get new products */
