@@ -1,1 +1,71 @@
 @import '@styles/main';
+
+.gallery {
+  @include container(padding);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: repeat(2, 17.5rem);
+  grid-template-areas:
+    'first third'
+    'second third';
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+.field {
+  border-radius: $border-radius;
+  position: relative;
+  overflow: hidden;
+
+  &:nth-child(1) {
+    grid-area: first;
+  }
+  &:nth-child(2) {
+    grid-area: second;
+  }
+  &:nth-child(3) {
+    grid-area: third;
+  }
+}
+
+.img {
+  height: 100%;
+
+  img {
+    position: absolute;
+    height: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Media */
+@include media(lg, mx) {
+  .gallery {
+    grid-template-rows: repeat(2, 11.25rem);
+  }
+}
+
+@include media(md, mx) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 17.5rem) 23.125rem;
+    grid-template-areas:
+      'first first'
+      'second second'
+      'third third';
+    row-gap: 1.25rem;
+  }
+
+  .field {
+    &:nth-child(3) {
+      .img {
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
