@@ -1,0 +1,20 @@
+@import '@styles/main';
+
+.page {
+  display: grid;
+  grid-auto-flow: row;
+  margin-top: $margin-items;
+  row-gap: $margin-items;
+}
+
+.btn {
+  @include body-main;
+  @include container(padding);
+  color: color(subtitle);
+  cursor: pointer;
+  text-transform: capitalize;
+
+  &:hover {
+    color: $color-orange;
+  }
+}
