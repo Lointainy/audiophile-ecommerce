@@ -9,7 +9,7 @@ import { ROUTES } from '@router/routes'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 
 /* Components */
-import { CategoryList, ProductInfo } from '@components'
+import { CategoryList, OtherInfo, ProductInfo } from '@components'
 
 /* Styles */
 import style from './ProductPage.module.scss'
@@ -38,20 +38,7 @@ const ProductPage: React.FC = () => {
         Go back
       </button>
       <ProductInfo product={product} />
-
-      <h2 className={style.title}>Features</h2>
-      <p className={style.features}>{product.features}</p>
-
-      <h2 className={style.title}>in the box</h2>
-      <ul className={style.includes}>
-        {product.includes?.map((i) => {
-          return (
-            <li key={i.item} className={style.item}>
-              <span className={style.quantity}>x{i.item}</span>
-            </li>
-          )
-        })}
-      </ul>
+      <OtherInfo features={product.features} includes={product.includes} />
 
       <ul className={style.gallery}>
         <li className={style.field}>

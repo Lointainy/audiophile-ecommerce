@@ -13,6 +13,7 @@ export { default as MobileNav } from './NavBar/MobileNav/MobileNav'
 export { default as SwitchTheme } from './NavBar/SwitchTheme/SwitchTheme'
 export { default as ToggleMenu } from './NavBar/ToggleMenu/ToggleMenu'
 /* Products */
+export { default as OtherInfo } from './OtherInfo/OtherInfo'
 export { default as ProductInfo } from './ProductInfo/ProductInfo'
 export { default as ProductsByCategory } from './ProductsByCategory/ProductsByCategory'
 export { default as ProductsGallery } from './ProductsGallery/index'
