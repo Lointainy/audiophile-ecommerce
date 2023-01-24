@@ -2,10 +2,17 @@
 import { ROUTES } from '@router/routes'
 import { NavLink } from 'react-router-dom'
 
+/* Hooks */
+import { useMediaQuery } from '@hooks/useMediaQuery'
+
 /* Styles */
 import style from './OtherProducts.module.scss'
 
 const OtherProducts: React.FC = ({ products }) => {
+  const {
+    mediaQuery: { name: picSize },
+  } = useMediaQuery()
+
   return (
     <div className={style.products}>
       <h2 className={style.title}>You may also like</h2>
@@ -15,10 +22,10 @@ const OtherProducts: React.FC = ({ products }) => {
             <li key={product.name} className={style.item}>
               <div className={style.field}>
                 <div className={style.img}>
-                  <img src="" alt="" />
+                  <img src={`../${product.image[picSize]}`} alt="" />
                 </div>
               </div>
-              <h2 className={style.name}>{product.name}</h2>
+              <h5 className={style.name}>{product.name}</h5>
               <NavLink to={ROUTES.product(`${product.slug}`)} className={style.btn}>
                 see product
               </NavLink>
