@@ -18,3 +18,9 @@
     color: $color-orange;
   }
 }
+
+@include media(md, mx) {
+  .page {
+    row-gap: 5rem;
+  }
+}
