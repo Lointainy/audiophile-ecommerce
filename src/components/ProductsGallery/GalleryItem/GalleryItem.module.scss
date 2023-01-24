@@ -112,6 +112,10 @@
     max-height: 24rem;
   }
 
+  .title {
+    color: color(title);
+  }
+
   .field {
     background: color(fieldBg);
     justify-content: center;
