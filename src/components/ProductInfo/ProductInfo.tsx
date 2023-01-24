@@ -13,7 +13,7 @@ const ProductInfo: React.FC = ({ product }) => {
   } = useMediaQuery()
 
   return (
-    <div className={style.product}>
+    <div className={style.info}>
       <div className={style.field}>
         {product.categoryImage ? (
           <div className={style.img}>
