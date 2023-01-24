@@ -14,6 +14,7 @@ export { default as SwitchTheme } from './NavBar/SwitchTheme/SwitchTheme'
 export { default as ToggleMenu } from './NavBar/ToggleMenu/ToggleMenu'
 /* Products */
 export { default as OtherInfo } from './OtherInfo/OtherInfo'
+export { default as OtherProducts } from './OtherProducts/OtherProducts'
 export { default as PhotoGallery } from './PhotoGallery/PhotoGallery'
 export { default as ProductInfo } from './ProductInfo/ProductInfo'
 export { default as ProductsByCategory } from './ProductsByCategory/ProductsByCategory'
