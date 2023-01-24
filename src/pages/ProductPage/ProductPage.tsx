@@ -9,7 +9,7 @@ import { ROUTES } from '@router/routes'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 
 /* Components */
-import { CategoryList, OtherInfo, ProductInfo } from '@components'
+import { CategoryList, OtherInfo, PhotoGallery, ProductInfo } from '@components'
 
 /* Styles */
 import style from './ProductPage.module.scss'
@@ -37,26 +37,10 @@ const ProductPage: React.FC = () => {
       <button className={style.btn} onClick={goBack}>
         Go back
       </button>
+
       <ProductInfo product={product} />
       <OtherInfo features={product.features} includes={product.includes} />
-
-      <ul className={style.gallery}>
-        <li className={style.field}>
-          <div className={style.img}>
-            <img src="" alt="" />
-          </div>
-        </li>
-        <li className={style.field}>
-          <div className={style.img}>
-            <img src="" alt="" />
-          </div>
-        </li>
-        <li className={style.field}>
-          <div className={style.img}>
-            <img src="" alt="" />
-          </div>
-        </li>
-      </ul>
+      <PhotoGallery gallery={product.gallery} />
 
       <h2 className={style.title}>You may also like</h2>
       <ul className={style.list}>
