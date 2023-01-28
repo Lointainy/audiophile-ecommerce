@@ -5,10 +5,10 @@ import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { getProduct } from '@store/reducers/dataSlice'
 
 /* Router */
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 /* Components */
-import { CategoryList, OtherInfo, OtherProducts, PhotoGallery, ProductInfo } from '@components'
+import { BackButton, CategoryList, OtherInfo, OtherProducts, PhotoGallery, ProductInfo } from '@components'
 
 /* Styles */
 import style from './ProductPage.module.scss'
@@ -20,12 +20,6 @@ const ProductPage: React.FC = () => {
 
   const product = useAppSelector((store) => store.data.product)
 
-  let navigate = useNavigate()
-
-  const goBack = () => {
-    window.history.length <= 1 ? navigate('/') : navigate(-1)
-  }
-
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
     dispath(getProduct(productName))
@@ -33,10 +27,7 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className={style.page}>
-      <button className={style.btn} onClick={goBack}>
-        Go back
-      </button>
-
+      <BackButton />
       <ProductInfo product={product} />
       <OtherInfo features={product.features} includes={product.includes} />
       <PhotoGallery gallery={product.gallery} />

@@ -7,18 +7,6 @@
   row-gap: $margin-items;
 }
 
-.btn {
-  @include body-main;
-  @include container(padding);
-  color: color(subtitle);
-  cursor: pointer;
-  text-transform: capitalize;
-
-  &:hover {
-    color: $color-orange;
-  }
-}
-
 @include media(md, mx) {
   .page {
     row-gap: 5rem;

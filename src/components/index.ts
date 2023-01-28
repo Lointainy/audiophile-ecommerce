@@ -1,5 +1,8 @@
+/* Other */
+export { default as BackButton } from './BackButton/BackButton'
 /* Menu / Category */
 export { default as CategoryList } from './CategoryList/CategoryList'
+export { default as CheckoutForm } from './CheckoutForm/CheckoutForm'
 /* Home */
 export { default as HeaderContent } from './HeaderContent/HeaderContent'
 /* About */
