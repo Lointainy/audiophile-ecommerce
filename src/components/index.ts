@@ -2,6 +2,7 @@
 export { default as BackButton } from './BackButton/BackButton'
 /* Menu / Category */
 export { default as CategoryList } from './CategoryList/CategoryList'
+/* Checkout */
 export { default as CheckoutForm } from './CheckoutForm/CheckoutForm'
 /* Home */
 export { default as HeaderContent } from './HeaderContent/HeaderContent'
