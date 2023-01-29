@@ -1,0 +1,12 @@
+@import '@styles/main';
+
+.page {
+  @include container(padding);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-auto-rows: max-content;
+  padding-top: $margin-items;
+  padding-bottom: $margin-items;
+  row-gap: $margin-items;
+  background: $color-silver;
+}
