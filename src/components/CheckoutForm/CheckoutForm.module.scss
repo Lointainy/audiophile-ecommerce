@@ -15,3 +15,23 @@
   color: $color-orange;
   text-transform: uppercase;
 }
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+}
+
+.billing {
+  grid-template-areas:
+    'name email'
+    'phone .';
+}
+
+.shipping {
+  grid-template-areas:
+    'address address'
+    'code city'
+    'country .';
+}
