@@ -2,13 +2,14 @@
 import style from './CheckoutPage.module.scss'
 
 /* Components */
-import { BackButton, CheckoutForm } from '@components'
+import { BackButton, CheckoutForm, SummaryField } from '@components'
 
 const CheckoutPage: React.FC = () => {
   return (
     <div className={style.page}>
       <BackButton />
       <CheckoutForm />
+      <SummaryField />
     </div>
   )
 }

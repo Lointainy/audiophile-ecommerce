@@ -1,0 +1,125 @@
+@import '@styles/main';
+
+.summary {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.field {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  padding: 2rem;
+
+  background-color: color(bg);
+  border-radius: $border-radius;
+}
+
+.title {
+  color: color(title);
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 1.5rem;
+}
+
+.item {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 64px 1fr max-content;
+  grid-template-rows: repeat(2, 32px);
+  align-items: center;
+  gap: 0rem 1rem;
+  grid-template-areas:
+    'img name quantity'
+    'img price quantity';
+}
+
+.img__field {
+  grid-area: img;
+  border-radius: $border-radius;
+  background: color(fieldBg);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.picture {
+  position: relative;
+  height: 100%;
+
+  img {
+    position: absolute;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.name,
+.price,
+.quantity {
+  @include body-main;
+  font-weight: 700;
+}
+
+.price,
+.quantity {
+  color: color(subtitle);
+}
+
+.name {
+  grid-area: name;
+  color: color(title);
+  text-transform: uppercase;
+}
+
+.price {
+  grid-area: price;
+}
+
+.quantity {
+  grid-area: quantity;
+}
+
+.total {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 0.5rem;
+
+  &__item {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+
+    &:nth-last-child(1) {
+      margin-top: 1rem;
+    }
+
+    span {
+      @include body-main;
+      color: color(subtitle);
+      text-transform: uppercase;
+    }
+
+    .item__price {
+      text-transform: uppercase;
+      @include heading-xs;
+      color: color(title);
+    }
+
+    .accent {
+      color: $color-orange;
+    }
+  }
+}
+
+.btn {
+  @include btn-basic;
+  padding: 0;
+  width: 100%;
+}

@@ -4,6 +4,7 @@ export { default as BackButton } from './BackButton/BackButton'
 export { default as CategoryList } from './CategoryList/CategoryList'
 /* Checkout */
 export { default as CheckoutForm } from './CheckoutForm/CheckoutForm'
+export { default as SummaryField } from './SummaryField/SummaryField'
 /* Home */
 export { default as HeaderContent } from './HeaderContent/HeaderContent'
 /* About */
