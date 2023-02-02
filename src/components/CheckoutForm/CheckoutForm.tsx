@@ -7,28 +7,24 @@ import style from './CheckoutForm.module.scss'
 import FormField from './FormField/FormField'
 import RadioField from './RadioField/RadioField'
 
-const CheckoutForm: React.FC = () => {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    code: '',
-    city: '',
-    country: '',
-    payment: '',
-    eNumber: '',
-    ePin: '',
-  })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.type == 'radio') {
-      setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-    } else {
-      setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }))
-    }
+/* Types */
+type Props = {
+  form: {
+    name: string
+    email: string
+    phone: string
+    address: string
+    code: string
+    city: string
+    country: string
+    payment: string
+    eNumber: string
+    ePin: string
   }
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
 
+const CheckoutForm: React.FC<Props> = ({ form, handleChange }) => {
   return (
     <div className={style.form}>
       <h6 className={style.title}>Billing Details</h6>
