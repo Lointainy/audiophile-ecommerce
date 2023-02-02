@@ -11,18 +11,14 @@
   grid-template-areas: 'image content';
 }
 
-.field {
+.img {
   grid-area: image;
-  border-radius: $border-radius;
-  background: color(fieldBg);
+  position: relative;
   height: 100%;
   width: 100%;
   overflow: hidden;
-}
-
-.img {
-  position: relative;
-  height: 100%;
+  background: color(fieldBg);
+  border-radius: $border-radius;
 
   img {
     position: absolute;

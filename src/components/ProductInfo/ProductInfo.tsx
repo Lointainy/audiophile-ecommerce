@@ -14,15 +14,13 @@ const ProductInfo: React.FC = ({ product }) => {
 
   return (
     <div className={style.info}>
-      <div className={style.field}>
-        {product.categoryImage ? (
-          <div className={style.img}>
-            <img src={`../${product.categoryImage[picSize]}`} alt="" />
-          </div>
-        ) : (
-          <div className={style.img}></div>
-        )}
-      </div>
+      {product.categoryImage ? (
+        <div className={style.img}>
+          <img src={`../${product.categoryImage[picSize]}`} alt="" />
+        </div>
+      ) : (
+        <div className={style.img}></div>
+      )}
       <div className={style.content}>
         <div className={style.title}>
           {product.new ? <span className={style.subtitle}>new product</span> : ''}
