@@ -23,10 +23,8 @@ const ProductsByCategory: React.FC = () => {
       {products.map((product) => {
         return (
           <li className={style.product} key={product.id}>
-            <div className={style.field}>
-              <div className={style.img}>
-                <img src={`../${product.categoryImage[picSize]}`} alt="" />
-              </div>
+            <div className={style.img}>
+              <img src={`../${product.categoryImage[picSize]}`} alt="" />
             </div>
             <div className={style.content}>
               <div className={style.title}>
