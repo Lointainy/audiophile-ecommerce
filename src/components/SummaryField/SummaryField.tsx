@@ -8,10 +8,8 @@ const SummaryField: React.FC = () => {
         <h6 className={style.title}>summary</h6>
         <ul className={style.list}>
           <li className={style.item}>
-            <div className={style.img__field}>
-              <div className={style.picture}>
-                <img src="" alt="" />
-              </div>
+            <div className={style.img}>
+              <img src="" alt="" />
             </div>
 
             <div className={style.name}>name</div>
