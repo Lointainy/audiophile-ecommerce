@@ -123,3 +123,10 @@
   padding: 0;
   width: 100%;
 }
+
+/* Media */
+@include media(lg, mx) {
+  .summary {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+}

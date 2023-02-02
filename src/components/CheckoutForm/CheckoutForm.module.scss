@@ -48,3 +48,36 @@
     '. cash'
     'enumber epin';
 }
+
+/* Media */
+@include media(lg, mx) {
+  .form {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+}
+
+@include media(md, mx) {
+  .billing {
+    grid-template-areas:
+      'name name'
+      'email email'
+      'phone phone';
+  }
+
+  .shipping {
+    grid-template-areas:
+      'address address'
+      'code code'
+      'city city'
+      'country country';
+  }
+
+  .payment {
+    grid-template-areas:
+      'subtitle subtitle'
+      'emoney emoney'
+      'cash cash'
+      'enumber enumber'
+      'epin epin';
+  }
+} ;
