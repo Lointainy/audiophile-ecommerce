@@ -5,12 +5,16 @@ import style from './CheckoutPage.module.scss'
 import { BackButton, CheckoutForm, SummaryField } from '@components'
 
 const CheckoutPage: React.FC = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e)
+  }
   return (
-    <div className={style.page}>
+    <form className={style.page} onSubmit={handleSubmit}>
       <BackButton />
       <CheckoutForm />
       <SummaryField />
-    </div>
+    </form>
   )
 }
 export default CheckoutPage

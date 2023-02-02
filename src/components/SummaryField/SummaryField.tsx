@@ -40,7 +40,9 @@ const SummaryField: React.FC = () => {
           </li>
         </ul>
 
-        <button className={style.btn}>continue & pay</button>
+        <button className={style.btn} type="submit">
+          continue & pay
+        </button>
       </div>
     </div>
   )
