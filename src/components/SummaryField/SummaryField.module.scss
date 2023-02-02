@@ -38,15 +38,6 @@
     'img price quantity';
 }
 
-.img__field {
-  grid-area: img;
-  border-radius: $border-radius;
-  background: color(fieldBg);
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 .img {
   grid-area: img;
   position: relative;
