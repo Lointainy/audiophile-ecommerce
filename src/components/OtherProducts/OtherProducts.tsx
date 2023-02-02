@@ -20,10 +20,8 @@ const OtherProducts: React.FC = ({ products }) => {
         {products?.map((product) => {
           return (
             <li key={product.name} className={style.item}>
-              <div className={style.field}>
-                <div className={style.img}>
-                  <img src={`../${product.image[picSize]}`} alt="" />
-                </div>
+              <div className={style.img}>
+                <img src={`../${product.image[picSize]}`} alt="" />
               </div>
               <h5 className={style.name}>{product.name}</h5>
               <NavLink to={ROUTES.product(`${product.slug}`)} className={style.btn}>

@@ -27,17 +27,13 @@
   row-gap: 2.5rem;
 }
 
-.field {
-  border-radius: $border-radius;
-  background: color(fieldBg);
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 .img {
   position: relative;
   height: 100%;
+  width: 100%;
+  background: color(fieldBg);
+  border-radius: $border-radius;
+  overflow: hidden;
 
   img {
     position: absolute;
