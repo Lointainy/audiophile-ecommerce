@@ -1,5 +1,5 @@
 /* Route */
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 /* Layout */
 import Footer from './Footer/Footer'
@@ -9,12 +9,14 @@ import Header from './Header/Header'
 import { InfoCompany, Modals } from '@components'
 
 const Layout: React.FC = () => {
+  const { pathname } = useLocation()
+
   return (
     <>
       <Modals />
       <Header />
       <Outlet />
-      <InfoCompany />
+      {pathname != '/checkout' ? <InfoCompany /> : ''}
       <Footer />
     </>
   )
