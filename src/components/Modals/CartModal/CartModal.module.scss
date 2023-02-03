@@ -14,6 +14,9 @@
   border-radius: 0.5rem;
   padding: var(--padding);
   min-width: 23.75rem;
+}
+
+.content {
   display: grid;
   grid-auto-flow: row;
   grid-auto-columns: 1fr;
@@ -21,14 +24,14 @@
   row-gap: 1.5rem;
 }
 
+.title {
+  @include heading-xs;
+  color: color(title);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-
-  .title {
-    @include heading-xs;
-    color: color(title);
-  }
 
   .remove {
     @include body-main;
@@ -138,4 +141,17 @@
 .checkout {
   @include btn-basic;
   width: auto;
+}
+
+.empty {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+  color: color(title);
+
+  .icon {
+    font-size: 24px;
+    margin: 0 auto;
+  }
 }
