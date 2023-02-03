@@ -36,9 +36,12 @@ export const cartSlice = createSlice({
         state.order = [...state.order, action.payload]
       }
     },
+    clearCart: (state) => {
+      state.order = []
+    },
   },
 })
 
-export const { addToCart, increaseCart, decreaseCart } = cartSlice.actions
+export const { addToCart, increaseCart, decreaseCart, clearCart } = cartSlice.actions
 
 export default cartSlice.reducer
