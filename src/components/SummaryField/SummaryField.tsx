@@ -1,22 +1,31 @@
+/* Store */
+import { useAppSelector } from '@/hooks/useRedux'
+
 /* Styles */
 import style from './SummaryField.module.scss'
 
 const SummaryField: React.FC = () => {
+  const products = useAppSelector((store) => store.cart.order)
+
   return (
     <div className={style.summary}>
       <div className={style.field}>
         <h6 className={style.title}>summary</h6>
         <ul className={style.list}>
-          <li className={style.item}>
-            <div className={style.img}>
-              <img src="" alt="" />
-            </div>
+          {products.map((product) => {
+            return (
+              <li className={style.item}>
+                <div className={style.img}>
+                  <img src="" alt="" />
+                </div>
 
-            <div className={style.name}>name</div>
-            <div className={style.price}>$100</div>
+                <div className={style.name}>{product.name}</div>
+                <div className={style.price}>${product.price}</div>
 
-            <div className={style.quantity}>x1</div>
-          </li>
+                <div className={style.quantity}>x{product.quantity}</div>
+              </li>
+            )
+          })}
         </ul>
 
         <ul className={style.total}>
