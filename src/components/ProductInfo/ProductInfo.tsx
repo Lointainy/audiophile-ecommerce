@@ -8,7 +8,7 @@ import style from './ProductInfo.module.scss'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 
-const ProductInfo: React.FC = ({ product }) => {
+const ProductInfo: React.FC = ({ product, addProduct }) => {
   const [quantity, setQuantity] = useState(1)
 
   const {
@@ -54,7 +54,9 @@ const ProductInfo: React.FC = ({ product }) => {
             <Icon icon="minus" />
           </button>
         </div>
-        <button className={style.add}>add to cart</button>
+        <button className={style.add} onClick={() => addProduct(quantity)}>
+          add to cart
+        </button>
       </div>
     </div>
   )
