@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    AddToCart: (state, action) => {
+    addToCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
 
       find >= 0 ? (state.order[find].quantity += action.payload.quantity) : ''
@@ -39,6 +39,6 @@ export const cartSlice = createSlice({
   },
 })
 
-export const { AddToCart, increaseCart, decreaseCart } = cartSlice.actions
+export const { addToCart, increaseCart, decreaseCart } = cartSlice.actions
 
 export default cartSlice.reducer

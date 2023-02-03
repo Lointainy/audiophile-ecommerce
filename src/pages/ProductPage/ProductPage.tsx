@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 /* Store */
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { getProduct } from '@store/reducers/dataSlice'
-import { AddToCart } from '@store/reducers/cartSlice'
+import { addToCart } from '@store/reducers/cartSlice'
 
 /* Router */
 import { useParams } from 'react-router-dom'
@@ -28,7 +28,7 @@ const ProductPage: React.FC = () => {
 
   const handleAddProduct = (quantity: number) => {
     let addedProduct = { ...product, quantity }
-    dispatch(AddToCart(addedProduct))
+    dispatch(addToCart(addedProduct))
   }
 
   return (
