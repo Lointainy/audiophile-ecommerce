@@ -7,6 +7,8 @@ import style from './SummaryField.module.scss'
 const SummaryField: React.FC = () => {
   const products = useAppSelector((store) => store.cart.order)
 
+  const totalPrice = useAppSelector((store) => store.cart.total)
+
   return (
     <div className={style.summary}>
       <div className={style.field}>
@@ -31,19 +33,19 @@ const SummaryField: React.FC = () => {
         <ul className={style.total}>
           <li className={style.total__item}>
             <span>total</span>
-            <p className={style.item__price}>$5000</p>
+            <p className={style.item__price}>${totalPrice}</p>
           </li>
           <li className={style.total__item}>
             <span>shipping</span>
-            <p className={style.item__price}>$5000</p>
+            <p className={style.item__price}>$50</p>
           </li>
           <li className={style.total__item}>
             <span>vat (included)</span>
-            <p className={style.item__price}>$5000</p>
+            <p className={style.item__price}>${Math.round(totalPrice * 0.2)}</p>
           </li>
           <li className={style.total__item}>
             <span>grand total</span>
-            <p className={`${style.item__price} ${style.accent}`}>$5000</p>
+            <p className={`${style.item__price} ${style.accent}`}>${totalPrice + 50}</p>
           </li>
         </ul>
 
