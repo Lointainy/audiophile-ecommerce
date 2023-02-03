@@ -6,11 +6,27 @@ import style from './ProductInfo.module.scss'
 
 /* Icons */
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 
 const ProductInfo: React.FC = ({ product }) => {
+  const [quantity, setQuantity] = useState(1)
+
   const {
     mediaQuery: { name: picSize },
   } = useMediaQuery()
+
+  const handleQuantity = (name: string) => {
+    if (name == 'inc') {
+      quantity < 5 ? setQuantity(quantity + 1) : ''
+    }
+    if (name == 'dec') {
+      quantity > 1 ? setQuantity(quantity - 1) : ''
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuantity(Number(e.target.value))
+  }
 
   return (
     <div className={style.info}>
@@ -30,11 +46,11 @@ const ProductInfo: React.FC = ({ product }) => {
         <p className={style.desc}>{product.description}</p>
         <span className={style.price}>$ {product.price}</span>
         <div className={style.quantity}>
-          <button className={style.btn}>
+          <button className={style.btn} name="inc" onClick={() => handleQuantity('inc')}>
             <Icon icon="plus" />
           </button>
-          <input type="number" name="" id="" className={style.number} />
-          <button className={style.btn}>
+          <input type="number" value={quantity} onChange={(e) => handleChange(e)} className={style.number} />
+          <button className={style.btn} name="dec" onClick={() => handleQuantity('dec')}>
             <Icon icon="minus" />
           </button>
         </div>
