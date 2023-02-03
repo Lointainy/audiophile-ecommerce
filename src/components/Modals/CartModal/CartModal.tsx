@@ -15,6 +15,8 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 const CartModal: React.FC = () => {
   const products = useAppSelector((store) => store.cart.order)
 
+  const totalPrice = useAppSelector((store) => store.cart.total)
+
   const dispatch = useAppDispatch()
 
   return (
@@ -54,7 +56,7 @@ const CartModal: React.FC = () => {
             </ul>
             <div className={style.total}>
               <span>total</span>
-              <div className={style.total__price}>$100</div>
+              <div className={style.total__price}>${totalPrice}</div>
             </div>
             <NavLink className={style.checkout} to={ROUTES.checkout}>
               checkout

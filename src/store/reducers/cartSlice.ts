@@ -1,11 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { stat } from 'fs'
 
 interface CartState {
   order: any[]
+  total: number
 }
 
 const initialState: CartState = {
   order: [],
+  total: 0,
 }
 
 export const cartSlice = createSlice({
@@ -17,6 +20,8 @@ export const cartSlice = createSlice({
 
       find >= 0 ? (state.order[find].quantity += action.payload.quantity) : ''
       find < 0 ? (state.order = [...state.order, action.payload]) : ''
+
+      state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
     },
     increaseCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
@@ -26,6 +31,8 @@ export const cartSlice = createSlice({
       } else {
         state.order = [...state.order, action.payload]
       }
+
+      state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
     },
     decreaseCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
@@ -35,9 +42,12 @@ export const cartSlice = createSlice({
       } else {
         state.order = [...state.order, action.payload]
       }
+
+      state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
     },
     clearCart: (state) => {
       state.order = []
+      state.total = 0
     },
   },
 })
