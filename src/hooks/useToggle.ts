@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 export function useToggle(initialValue: boolean) {
-  const [value, setValue] = useState(initialValue)
+  const [toggle, setToggle] = useState(initialValue)
 
-  const toggle = () => {
-    setValue(!value)
+  const handleToggle = () => {
+    setToggle(!toggle)
   }
 
-  return { value, toggle }
+  return { toggle, handleToggle }
 }
