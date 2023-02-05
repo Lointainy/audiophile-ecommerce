@@ -7,19 +7,18 @@
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 'info';
-  background: $color-dark;
+  background: #191919;
   height: calc(100vh - 100px);
   align-items: center;
-
-  @include media(lg, mx) {
-    grid-template-areas: 'info info';
-  }
 }
 
-.img {
+.background {
   position: absolute;
+  height: 100%;
+  width: 100%;
   right: 0;
   top: 0;
+  z-index: $i-zero;
 }
 
 .info {
@@ -29,10 +28,7 @@
   grid-auto-flow: row;
   grid-auto-rows: max-content;
   row-gap: 1.5rem;
-
-  @include media(md, mx) {
-    text-align: center;
-  }
+  z-index: $i-content;
 }
 
 .subtitle {
@@ -44,25 +40,39 @@
 .title {
   color: $color-white;
   text-transform: uppercase;
-
-  @include media(md, mx) {
-    font-size: 2.25rem;
-  }
 }
 
 .desc {
   color: #{$color-white + '80'};
-
-  @include media(md, mx) {
-    max-width: 22.5rem;
-    margin: 0 auto;
-  }
 }
 
 .button {
   @include btn-basic;
+}
 
-  @include media(md, mx) {
+/* MEDIA*/
+
+@include media(lg, mx) {
+  .content {
+    grid-template-areas: 'info info';
+  }
+}
+
+@include media(md, mx) {
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  .desc {
+    max-width: 22.5rem;
+    margin: 0 auto;
+  }
+
+  .button {
     margin: 0 auto;
   }
 }

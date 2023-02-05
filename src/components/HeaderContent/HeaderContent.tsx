@@ -1,7 +1,18 @@
+/* Hooks */
+import { useMediaQuery } from '@hooks/useMediaQuery'
+
 /* Styles */
 import style from './HeaderContent.module.scss'
 
 const HeaderContent: React.FC = () => {
+  const {
+    mediaQuery: { name: picSize },
+  } = useMediaQuery()
+
+  const backgroundImg = {
+    background: `url(./assets/home/${picSize}/image-header.jpg) center/contain no-repeat`,
+  }
+
   return (
     <div className={style.content}>
       <div className={style.info}>
@@ -12,9 +23,7 @@ const HeaderContent: React.FC = () => {
         </p>
         <button className={style.button}>see product</button>
       </div>
-      <div className={style.img}>
-        <img src="" alt="" />
-      </div>
+      <div className={style.background} style={backgroundImg}></div>
     </div>
   )
 }
