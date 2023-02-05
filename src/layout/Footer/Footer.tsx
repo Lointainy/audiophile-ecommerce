@@ -1,3 +1,10 @@
+/* Route */
+import { ROUTES } from '@router/routes'
+import { NavLink } from 'react-router-dom'
+
+/* Store */
+import { useAppSelector } from '@hooks/useRedux'
+
 /* Styles */
 import style from './Footer.module.scss'
 
@@ -8,12 +15,14 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { DesktopNav } from '@components'
 
 const Footer: React.FC = () => {
+  const theme = useAppSelector((store) => store.ui.colorTheme)
   return (
     <>
       <footer>
         <div className={style.logo}>
-          <img src="" alt="" />
-          logo
+          <NavLink to={ROUTES.home}>
+            <img src={`./assets/${theme}-logo.svg`} alt="" />
+          </NavLink>
         </div>
         <nav className={style.navigation}>
           <DesktopNav />
