@@ -7,5 +7,5 @@ export function useToggle(initialValue: boolean) {
     setToggle(!toggle)
   }
 
-  return { toggle, handleToggle }
+  return { toggle, setToggle, handleToggle }
 }

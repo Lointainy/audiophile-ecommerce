@@ -12,11 +12,10 @@ export { default as InfoCompany } from './InfoCompany/InfoCompany'
 /* Modals */
 export { default as Modals } from './Modals/Modals'
 /* Navbar */
-export { default as CartToggle } from './NavBar/CartToggle/CartToggle'
 export { default as DesktopNav } from './NavBar/DesktopNav/DesktopNav'
 export { default as MobileNav } from './NavBar/MobileNav/MobileNav'
 export { default as SwitchTheme } from './NavBar/SwitchTheme/SwitchTheme'
-export { default as ToggleMenu } from './NavBar/ToggleMenu/ToggleMenu'
+export { default as NavBar } from './NavBar/index'
 /* Products */
 export { default as OtherInfo } from './OtherInfo/OtherInfo'
 export { default as OtherProducts } from './OtherProducts/OtherProducts'

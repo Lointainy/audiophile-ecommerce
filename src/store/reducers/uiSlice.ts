@@ -12,12 +12,12 @@ export const uiSlice = createSlice({
     SET_THEME: (state, action) => {
       state.colorTheme = action.payload
     },
-    TOGGLE_NAV: (state) => {
+    toggleNav: (state) => {
       state.nav = !state.nav
     },
   },
 })
 
-export const { SET_THEME, TOGGLE_NAV } = uiSlice.actions
+export const { SET_THEME, toggleNav } = uiSlice.actions
 
 export default uiSlice.reducer

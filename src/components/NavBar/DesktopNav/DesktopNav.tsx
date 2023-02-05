@@ -10,7 +10,7 @@ import style from './DesktopNav.module.scss'
 
 const DesktopNav: React.FC = () => {
   return (
-    <ul className={style.list}>
+    <ul className={style.desktop}>
       {links.map((item) => {
         return (
           <li className={style.item} key={item.id}>

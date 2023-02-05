@@ -14,17 +14,17 @@ import style from './SwitchTheme.module.scss'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 const SwitchTheme: React.FC = () => {
-  const { value, toggleTheme, userTheme } = useTheme()
+  const { theme, toggleTheme, userTheme } = useTheme()
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(SET_THEME(userTheme))
-  }, [value])
+  }, [theme])
 
   return (
-    <div className={style.theme__icon} onClick={toggleTheme}>
-      {value ? <Icon icon="sun" /> : <Icon icon="moon" />}
+    <div className={style.theme} onClick={toggleTheme}>
+      {theme ? <Icon icon="sun" /> : <Icon icon="moon" />}
     </div>
   )
 }

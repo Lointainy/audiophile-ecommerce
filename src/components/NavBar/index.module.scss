@@ -1,0 +1,38 @@
+@import '@styles/main';
+
+.navbar {
+  @include container(padding);
+  background-color: color(bgInvert);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: minmax(auto, 300px) 1fr 40px 40px;
+  grid-auto-rows: 40px;
+  grid-template-areas: 'logo navigation theme cart';
+  column-gap: 2.125rem;
+  padding: 1.875rem 0;
+  color: color(titleInvert);
+  align-items: center;
+  border-bottom: 1px solid color(border);
+  z-index: 400;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: lowercase;
+  grid-area: logo;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Media */
+
+@include media(md, mx) {
+  .navbar {
+    grid-template-areas: 'navigation logo theme cart';
+    grid-template-columns: 40px minmax(auto, 1fr) 40px 40px;
+    column-gap: 0.5rem;
+  }
+}

@@ -17,7 +17,7 @@ const Modals: React.FC = () => {
       {getModal.ModalOpen ? (
         <div className={style.overlay} onClick={() => dispatch(CLOSE_MODAL())}>
           <div className={style.modal} onClick={(e) => e.stopPropagation()}>
-            {getModal.ModalType === 'cart' && <CartModal />}
+            {/* {getModal.ModalType === 'cart' && <CartModal />} */}
           </div>
         </div>
       ) : (

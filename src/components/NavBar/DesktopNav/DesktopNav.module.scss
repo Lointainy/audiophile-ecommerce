@@ -1,15 +1,11 @@
 @import '@styles/main';
 
-.list {
+.desktop {
+  grid-area: navigation;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   column-gap: 2.125rem;
-
-  @include media(sm, mx) {
-    grid-auto-flow: row;
-    row-gap: 1rem;
-  }
 }
 
 .item {
@@ -23,5 +19,12 @@
   &:hover {
     transition: $animate;
     color: $color-orange;
+  }
+}
+
+/* Media */
+@include media(md, mx) {
+  .desktop {
+    display: none;
   }
 }
