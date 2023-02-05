@@ -9,6 +9,22 @@
   @include navbar-icon;
 }
 
+.label {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: $color-orange;
+  color: $color-white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .overlay {
   position: fixed;
   width: 100%;

@@ -38,6 +38,7 @@ const CartDropdown: React.FC = () => {
       <div className={style.icon} onClick={handleToggle}>
         <Icon icon="cart-shopping" />
       </div>
+      {products.length > 0 && <div className={style.label}>{products.length}</div>}
 
       {toggle && (
         <>
