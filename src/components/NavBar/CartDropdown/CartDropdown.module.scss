@@ -141,6 +141,8 @@
   text-align: center;
 
   .number {
+    display: grid;
+    align-items: center;
     color: color(title);
   }
 

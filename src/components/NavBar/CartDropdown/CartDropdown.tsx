@@ -75,7 +75,7 @@ const CartDropdown: React.FC = () => {
                             <button className={style.button} onClick={() => dispatch(increaseCart(product))}>
                               <Icon icon="plus" />
                             </button>
-                            <input type="number" value={product.quantity} className={style.number} />
+                            <div className={style.number}>{product.quantity}</div>
                             <button className={style.button} onClick={() => dispatch(decreaseCart(product))}>
                               <Icon icon="minus" />
                             </button>
