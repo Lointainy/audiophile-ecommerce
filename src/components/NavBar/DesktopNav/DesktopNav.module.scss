@@ -6,6 +6,7 @@
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   column-gap: 2.125rem;
+  z-index: $i-header;
 }
 
 .item {
