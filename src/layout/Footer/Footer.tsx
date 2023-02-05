@@ -14,6 +14,12 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 /* Components */
 import { DesktopNav } from '@components'
 
+/* logo */
+import darkLogo from '@public/assets/dark-theme-logo.svg'
+import lightLogo from '@public/assets/light-theme-logo.svg'
+
+// import lightLogo from ''
+
 const Footer: React.FC = () => {
   const theme = useAppSelector((store) => store.ui.colorTheme)
   return (
@@ -21,7 +27,8 @@ const Footer: React.FC = () => {
       <footer>
         <div className={style.logo}>
           <NavLink to={ROUTES.home}>
-            <img src={`./assets/${theme}-logo.svg`} alt="" />
+            {theme == 'dark-theme' && <img src={`${darkLogo}`} alt="" />}
+            {theme == 'light-theme' && <img src={`${lightLogo}`} alt="" />}
           </NavLink>
         </div>
         <nav className={style.navigation}>
