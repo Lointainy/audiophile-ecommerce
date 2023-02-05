@@ -1,10 +1,13 @@
 @import '@styles/main';
 
 .overlay {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
   background: #{$color-black + '66'};
   z-index: $i-modal;
 }
