@@ -1,6 +1,10 @@
 /* Hooks */
 import { useMediaQuery } from '@hooks/useMediaQuery'
 
+/* Route */
+import { ROUTES } from '@router/routes'
+import { NavLink } from 'react-router-dom'
+
 /* Styles */
 import style from './HeaderContent.module.scss'
 
@@ -21,7 +25,9 @@ const HeaderContent: React.FC = () => {
         <p className={style.desc}>
           Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
         </p>
-        <button className={style.button}>see product</button>
+        <NavLink to={ROUTES.product(`xx99-mark-two-headphones`)} className={style.button}>
+          see product
+        </NavLink>
       </div>
       <div className={style.background} style={backgroundImg}></div>
     </div>
