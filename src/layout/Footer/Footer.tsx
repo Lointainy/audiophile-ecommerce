@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           </li>
         </ul>
         <div className={style.copyright}>
-          <span>Copyright 2021. All Rights Reserved</span>
+          <span>Copyright {new Date().getFullYear()}. All Rights Reserved</span>
         </div>
       </footer>
     </>
