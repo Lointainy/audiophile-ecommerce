@@ -26,8 +26,8 @@ const InfoCompany: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className={style.pic}>
-        <img src={`../assets/shared/${picSize}/image-best-gear.jpg`} alt="" className={style.img} />
+      <div className={style.img}>
+        <img src={`../assets/info/${picSize}/image-best-gear.jpg`} alt="" />
       </div>
     </div>
   )

@@ -31,19 +31,21 @@
   color: color(subtitle);
 }
 
-.pic {
-  grid-area: image;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  border-radius: $border-radius;
-}
-
 .img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: color(fieldBg);
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    height: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* MEDIA */
@@ -67,6 +69,10 @@
   }
 }
 @include media(md, mx) {
+  .img {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
-@include media(sm, mx) {
-} ;
