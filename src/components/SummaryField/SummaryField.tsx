@@ -23,7 +23,7 @@ const SummaryField: React.FC = () => {
         <ul className={style.list}>
           {products.map((product) => {
             return (
-              <li className={style.item}>
+              <li className={style.item} key={product.slug}>
                 <div className={style.img}>
                   <img src={`../${product.categoryImage[picSize]}`} alt="" />
                 </div>
