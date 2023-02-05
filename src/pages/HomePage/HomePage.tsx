@@ -5,7 +5,7 @@ import { useAppDispatch } from '@hooks/useRedux'
 import { getGalleryProducts, getNewProduct } from '@store/reducers/dataSlice'
 
 /* Components */
-import { CategoryList, HeaderContent, ProductsGallery } from '@components'
+import { CategoryList, ProductsGallery } from '@components'
 
 /* Styles */
 import style from './HomePage.module.scss'
@@ -19,7 +19,6 @@ const HomePage: React.FC = () => {
   }, [])
   return (
     <>
-      <HeaderContent />
       <div className={style.page}>
         <CategoryList />
         <ProductsGallery />
