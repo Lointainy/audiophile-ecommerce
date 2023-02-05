@@ -1,3 +1,6 @@
+/* Hooks */
+import { useMediaQuery } from '@hooks/useMediaQuery'
+
 /* Store */
 import { useAppSelector } from '@/hooks/useRedux'
 
@@ -9,6 +12,10 @@ const SummaryField: React.FC = () => {
 
   const totalPrice = useAppSelector((store) => store.cart.total)
 
+  const {
+    mediaQuery: { name: picSize },
+  } = useMediaQuery()
+
   return (
     <div className={style.summary}>
       <div className={style.field}>
@@ -18,7 +25,7 @@ const SummaryField: React.FC = () => {
             return (
               <li className={style.item}>
                 <div className={style.img}>
-                  <img src="" alt="" />
+                  <img src={`../${product.categoryImage[picSize]}`} alt="" />
                 </div>
 
                 <div className={style.name}>{product.name}</div>

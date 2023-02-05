@@ -1,3 +1,6 @@
+/* Hooks */
+import { useMediaQuery } from '@hooks/useMediaQuery'
+
 /* Route */
 import { ROUTES } from '@router/routes'
 import { NavLink, useLocation } from 'react-router-dom'
@@ -29,6 +32,10 @@ const CartDropdown: React.FC = () => {
 
   const dispatch = useAppDispatch()
 
+  const {
+    mediaQuery: { name: picSize },
+  } = useMediaQuery()
+
   useEffect(() => {
     setToggle(initialState.toggle)
   }, [location])
@@ -58,7 +65,7 @@ const CartDropdown: React.FC = () => {
                       return (
                         <li className={style.item} key={product.slug}>
                           <div className={style.img}>
-                            <img src="" alt="" />
+                            <img src={`../${product.categoryImage[picSize]}`} alt="" />
                           </div>
 
                           <div className={style.name}>{product.name}</div>
