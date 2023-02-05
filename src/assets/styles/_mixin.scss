@@ -123,6 +123,22 @@
   }
 }
 
+@mixin navbar-icon {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &:hover {
+    transition: $animate;
+    color: color(bgInvert);
+    background: color(titleInvert);
+  }
+}
+
 // DON`T TOUCH
 
 /* Container */
