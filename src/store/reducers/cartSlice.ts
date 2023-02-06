@@ -59,9 +59,12 @@ export const cartSlice = createSlice({
       state.order = []
       state.total = 0
     },
+    clearErrorQuantity: (state) => {
+      state.errorQuantity = false
+    },
   },
 })
 
-export const { addToCart, increaseCart, decreaseCart, clearCart } = cartSlice.actions
+export const { addToCart, increaseCart, decreaseCart, clearCart, clearErrorQuantity } = cartSlice.actions
 
 export default cartSlice.reducer
