@@ -12,7 +12,13 @@
   z-index: $i-modal;
 }
 
-.modal {
-  @include container(padding);
+.field {
   position: relative;
+  background: color(bg);
+  padding: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 444px;
+  border-radius: $border-radius;
 }
