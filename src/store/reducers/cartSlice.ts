@@ -1,14 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { stat } from 'fs'
 
 interface CartState {
   order: any[]
   total: number
+  errorQuantity: boolean
+  maxQuantity: number
 }
 
 const initialState: CartState = {
   order: [],
   total: 0,
+  errorQuantity: false,
+  maxQuantity: 5,
 }
 
 export const cartSlice = createSlice({
@@ -18,7 +21,14 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
 
-      find >= 0 ? (state.order[find].quantity += action.payload.quantity) : ''
+      if (find >= 0) {
+        state.order[find].quantity += action.payload.quantity
+        if (state.order[find].quantity > state.maxQuantity) {
+          state.errorQuantity = true
+          state.order[find].quantity = state.maxQuantity
+        }
+      }
+
       find < 0 ? (state.order = [...state.order, action.payload]) : ''
 
       state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
@@ -27,7 +37,7 @@ export const cartSlice = createSlice({
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
 
       if (find >= 0) {
-        state.order[find].quantity < 5 ? (state.order[find].quantity += 1) : ''
+        state.order[find].quantity < state.maxQuantity ? (state.order[find].quantity += 1) : ''
       } else {
         state.order = [...state.order, action.payload]
       }
