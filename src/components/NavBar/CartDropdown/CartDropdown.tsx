@@ -1,5 +1,8 @@
+import { useEffect } from 'react'
+
 /* Hooks */
 import { useMediaQuery } from '@hooks/useMediaQuery'
+import { useToggle } from '@hooks/useToggle'
 
 /* Route */
 import { ROUTES } from '@router/routes'
@@ -14,8 +17,9 @@ import style from './CartDropdown.module.scss'
 
 /* Icons */
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
-import { useToggle } from '@/hooks/useToggle'
-import { useEffect } from 'react'
+
+/* Components */
+import EmpryCart from '@/components/EmptyCart/EmptyCart'
 
 const initialState = {
   toggle: false,
@@ -95,10 +99,7 @@ const CartDropdown: React.FC = () => {
                   </NavLink>
                 </div>
               ) : (
-                <div className={style.empty}>
-                  <div className={style.title}>You cart is empty</div>
-                  <Icon icon="cart-shopping" className={style.empty__icon} />
-                </div>
+                <EmpryCart />
               )}
             </div>
           </div>

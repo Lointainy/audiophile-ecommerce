@@ -1,17 +1,20 @@
 import { useState } from 'react'
 
 /* Store */
-import { useAppDispatch } from '@hooks/useRedux'
+import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
+import { OPEN_MODAL } from '@store/reducers/modalSlice'
 
 /* Styles */
 import style from './CheckoutPage.module.scss'
 
 /* Components */
-import { BackButton, CheckoutForm, SummaryField } from '@components'
-import { OPEN_MODAL } from '@/store/reducers/modalSlice'
+import { BackButton, CheckoutForm, SummaryField, EmptyCart } from '@components'
 
 const CheckoutPage: React.FC = () => {
   const dispatch = useAppDispatch()
+
+  const { order } = useAppSelector((store) => store.cart)
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -39,11 +42,17 @@ const CheckoutPage: React.FC = () => {
   }
 
   return (
-    <form className={style.page} onSubmit={handleSubmit}>
+    <div className={style.page}>
       <BackButton />
-      <CheckoutForm form={form} handleChange={handleChange} />
-      <SummaryField />
-    </form>
+      {order.length ? (
+        <form className={style.form} onSubmit={handleSubmit}>
+          <CheckoutForm form={form} handleChange={handleChange} />
+          <SummaryField />
+        </form>
+      ) : (
+        <EmptyCart />
+      )}
+    </div>
   )
 }
 export default CheckoutPage

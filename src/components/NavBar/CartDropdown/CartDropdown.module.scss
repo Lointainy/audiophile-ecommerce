@@ -180,19 +180,6 @@
   width: auto;
 }
 
-.empty {
-  display: grid;
-  row-gap: 2rem;
-  color: color(title);
-  align-items: center;
-  justify-content: center;
-
-  &__icon {
-    font-size: 24px;
-    margin: 0 auto;
-  }
-}
-
 /* MEDIA */
 
 @include media(sm, mx) {
