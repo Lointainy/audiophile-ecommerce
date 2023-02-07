@@ -10,6 +10,7 @@ import style from './Modals.module.scss'
 
 /* Modals */
 import ErrorQuantity from './ErrorQuantity/ErrorQuantity'
+import CheckoutOrder from './CheckoutOrder/CheckoutOrder'
 
 const Modals: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -32,6 +33,7 @@ const Modals: React.FC = () => {
         <div className={style.overlay} onClick={handleClose}>
           <div className={style.field} onClick={(e) => e.stopPropagation()}>
             {getModal.ModalType === 'ErrorQuantity' && <ErrorQuantity />}
+            {getModal.ModalType === 'CheckoutOrder' && <CheckoutOrder />}
           </div>
         </div>
       )}

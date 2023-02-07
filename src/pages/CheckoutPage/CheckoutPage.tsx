@@ -1,12 +1,17 @@
 import { useState } from 'react'
 
+/* Store */
+import { useAppDispatch } from '@hooks/useRedux'
+
 /* Styles */
 import style from './CheckoutPage.module.scss'
 
 /* Components */
 import { BackButton, CheckoutForm, SummaryField } from '@components'
+import { OPEN_MODAL } from '@/store/reducers/modalSlice'
 
 const CheckoutPage: React.FC = () => {
+  const dispatch = useAppDispatch()
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -30,8 +35,9 @@ const CheckoutPage: React.FC = () => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    console.log(form)
+    dispatch(OPEN_MODAL('CheckoutOrder'))
   }
+
   return (
     <form className={style.page} onSubmit={handleSubmit}>
       <BackButton />

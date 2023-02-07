@@ -19,6 +19,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 444px;
+  width: 540px;
   border-radius: $border-radius;
+}
+
+/* MEDIA */
+
+@include media(sm, mx) {
+  .field {
+    transform: translate(calc(-50% - $grid-space-side), -50%);
+    @include container(margin);
+    width: auto;
+  }
 }
