@@ -33,7 +33,7 @@ const CartDropdown: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const {
-    mediaQuery: { name: picSize },
+    mediaQuery: { name: displaySize },
   } = useMediaQuery()
 
   useEffect(() => {
@@ -65,10 +65,12 @@ const CartDropdown: React.FC = () => {
                       return (
                         <li className={style.item} key={product.slug}>
                           <div className={style.img}>
-                            <img src={`../${product.categoryImage[picSize]}`} alt="" />
+                            <img src={`../${product.categoryImage[displaySize]}`} alt="" />
                           </div>
 
-                          <div className={style.name}>{product.name}</div>
+                          <div className={style.name}>
+                            {displaySize == 'mobile' ? product.name.split(' ')[0] : product.name}
+                          </div>
                           <div className={style.price}>${product.price}</div>
 
                           <div className={style.quantity}>

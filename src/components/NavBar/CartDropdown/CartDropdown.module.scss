@@ -45,7 +45,7 @@
 }
 
 .field {
-  min-width: 23.75rem;
+  width: 23.75rem;
   padding: 1.875rem;
   background: color(bg);
   border-radius: 0.5rem;
@@ -190,5 +190,23 @@
   &__icon {
     font-size: 24px;
     margin: 0 auto;
+  }
+}
+
+/* MEDIA */
+
+@include media(sm, mx) {
+  .field {
+    min-width: 220px;
+    width: auto;
+  }
+  .item {
+    grid-template-areas:
+      'name name quantity'
+      'price price quantity';
+  }
+
+  .img {
+    display: none;
   }
 }
