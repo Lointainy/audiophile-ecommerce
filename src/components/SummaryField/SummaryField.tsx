@@ -10,7 +10,7 @@ import style from './SummaryField.module.scss'
 const SummaryField: React.FC = () => {
   const products = useAppSelector((store) => store.cart.order)
 
-  const totalPrice = useAppSelector((store) => store.cart.total)
+  const { total, vat, grandTotal, shipping } = useAppSelector((store) => store.cart)
 
   const {
     mediaQuery: { name: picSize },
@@ -40,19 +40,19 @@ const SummaryField: React.FC = () => {
         <ul className={style.total}>
           <li className={style.total__item}>
             <span>total</span>
-            <p className={style.item__price}>${totalPrice}</p>
+            <p className={style.item__price}>${total}</p>
           </li>
           <li className={style.total__item}>
             <span>shipping</span>
-            <p className={style.item__price}>$50</p>
+            <p className={style.item__price}>${shipping}</p>
           </li>
           <li className={style.total__item}>
             <span>vat (included)</span>
-            <p className={style.item__price}>${Math.round(totalPrice * 0.2)}</p>
+            <p className={style.item__price}>${vat}</p>
           </li>
           <li className={style.total__item}>
             <span>grand total</span>
-            <p className={`${style.item__price} ${style.accent}`}>${totalPrice + 50}</p>
+            <p className={`${style.item__price} ${style.accent}`}>${grandTotal}</p>
           </li>
         </ul>
 

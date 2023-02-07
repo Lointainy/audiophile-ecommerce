@@ -22,8 +22,8 @@ const initialState: CartState = {
 
 const calcPrice = (state: any) => {
   state.total = state.order.reduce((result: number, cartItem: any) => result + cartItem.price * cartItem.quantity, 0)
-  state.vat = state.total * 0.2
-  state.grandTotal = Math.round(state.total + state.vat + state.shipping)
+  state.vat = Math.round(state.total * 0.2)
+  state.grandTotal = state.total + state.vat + state.shipping
 }
 
 export const cartSlice = createSlice({
