@@ -60,7 +60,8 @@ export const cartSlice = createSlice({
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
 
       if (find >= 0) {
-        state.order[find].quantity > 1 ? (state.order[find].quantity -= 1) : ''
+        state.order[find].quantity >= 1 ? (state.order[find].quantity -= 1) : ''
+        state.order = state.order.filter((product) => product.quantity > 0)
       } else {
         state.order = [...state.order, action.payload]
       }
