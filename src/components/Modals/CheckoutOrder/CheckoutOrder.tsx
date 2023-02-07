@@ -68,9 +68,9 @@ const CheckoutOrder: React.FC = () => {
           })}
         </ul>
 
-        <div className={style.more}>
-          {!page.status && <span onClick={handleLoadMore}>and {products.length - 1} other item(s)</span>}
-          {page.status && products.length > 1 ? <span onClick={handleLoadMore}>view less</span> : ''}
+        <div className={style.more} onClick={handleLoadMore}>
+          {!page.status && <span>and {products.length - 1} other item(s)</span>}
+          {page.status && products.length > 1 ? <span>view less</span> : ''}
         </div>
         <div className={style.total}>
           <p className={style.total__title}>grand total</p>
