@@ -3,15 +3,27 @@ import { createSlice } from '@reduxjs/toolkit'
 interface CartState {
   order: any[]
   total: number
-  errorQuantity: boolean
+  shipping: number
+  vat: number
+  grandTotal: number
   maxQuantity: number
+  errorQuantity: boolean
 }
 
 const initialState: CartState = {
   order: [],
   total: 0,
-  errorQuantity: false,
+  shipping: 50,
+  vat: 0,
+  grandTotal: 0,
   maxQuantity: 5,
+  errorQuantity: false,
+}
+
+const calcPrice = (state: any) => {
+  state.total = state.order.reduce((result: number, cartItem: any) => result + cartItem.price * cartItem.quantity, 0)
+  state.vat = state.total * 0.2
+  state.grandTotal = Math.round(state.total + state.vat + state.shipping)
 }
 
 export const cartSlice = createSlice({
@@ -31,7 +43,7 @@ export const cartSlice = createSlice({
 
       find < 0 ? (state.order = [...state.order, action.payload]) : ''
 
-      state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
+      calcPrice(state)
     },
     increaseCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
@@ -42,7 +54,7 @@ export const cartSlice = createSlice({
         state.order = [...state.order, action.payload]
       }
 
-      state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
+      calcPrice(state)
     },
     decreaseCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
@@ -53,7 +65,7 @@ export const cartSlice = createSlice({
         state.order = [...state.order, action.payload]
       }
 
-      state.total = state.order.reduce((result, cartItem) => result + cartItem.price * cartItem.quantity, 0)
+      calcPrice(state)
     },
     clearCart: (state) => {
       state.order = []
