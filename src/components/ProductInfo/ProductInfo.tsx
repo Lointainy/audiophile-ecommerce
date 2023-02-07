@@ -46,12 +46,12 @@ const ProductInfo: React.FC = ({ product, addProduct }) => {
         <p className={style.desc}>{product.description}</p>
         <span className={style.price}>$ {product.price}</span>
         <div className={style.quantity}>
-          <button className={style.btn} name="inc" onClick={() => handleQuantity('inc')}>
-            <Icon icon="plus" />
-          </button>
-          <input type="number" value={quantity} onChange={(e) => handleChange(e)} className={style.number} />
           <button className={style.btn} name="dec" onClick={() => handleQuantity('dec')}>
             <Icon icon="minus" />
+          </button>
+          <span className={style.number}>{quantity}</span>
+          <button className={style.btn} name="inc" onClick={() => handleQuantity('inc')}>
+            <Icon icon="plus" />
           </button>
         </div>
         <button className={style.add} onClick={() => addProduct(quantity)}>

@@ -78,12 +78,12 @@ const CartDropdown: React.FC = () => {
                           <div className={style.price}>${product.price}</div>
 
                           <div className={style.quantity}>
-                            <button className={style.button} onClick={() => dispatch(increaseCart(product))}>
-                              <Icon icon="plus" />
-                            </button>
-                            <div className={style.number}>{product.quantity}</div>
                             <button className={style.button} onClick={() => dispatch(decreaseCart(product))}>
                               <Icon icon="minus" />
+                            </button>
+                            <div className={style.number}>{product.quantity}</div>
+                            <button className={style.button} onClick={() => dispatch(increaseCart(product))}>
+                              <Icon icon="plus" />
                             </button>
                           </div>
                         </li>
