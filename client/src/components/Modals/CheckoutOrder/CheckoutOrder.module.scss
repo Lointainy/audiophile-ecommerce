@@ -1,0 +1,146 @@
+@import '@styles/main';
+
+.modal {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 2rem;
+}
+
+.title {
+  color: color(title);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: color(subtitle);
+}
+
+.button {
+  @include btn-basic;
+  width: auto;
+}
+
+.order {
+  background: color(fieldBg);
+  border-radius: $border-radius;
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  grid-template-rows: max-content 4rem;
+  grid-template-areas:
+    'list total'
+    'more total';
+  overflow: hidden;
+}
+
+.list {
+  grid-area: list;
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 1.5rem;
+  padding: 24px;
+}
+
+.item {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 64px 1fr max-content;
+  justify-content: space-between;
+  grid-template-rows: repeat(2, 32px);
+  align-items: center;
+  gap: 0rem 1rem;
+  grid-template-areas:
+    'img name quantity'
+    'img price quantity';
+}
+
+.img {
+  grid-area: img;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.name,
+.price,
+.quantity {
+  @include body-main;
+  font-weight: 700;
+}
+
+.price,
+.quantity {
+  color: color(subtitle);
+}
+
+.name {
+  grid-area: name;
+  color: color(title);
+  text-transform: uppercase;
+}
+
+.price {
+  grid-area: price;
+}
+
+.quantity {
+  grid-area: quantity;
+}
+
+.more {
+  grid-area: more;
+  @include body-main;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid color(fieldBg);
+  margin: 0 24px;
+  color: color(subtitle);
+
+  &:hover {
+    cursor: pointer;
+    color: color(title);
+  }
+}
+
+.total {
+  grid-area: total;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: end;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  background: color(bgInvert);
+  padding: 24px;
+
+  &__title {
+    text-transform: uppercase;
+    color: color(subtitleInvert);
+  }
+
+  &__price {
+    color: color(titleInvert);
+  }
+}
+
+/* MEDIA */
+
+@include media(sm, mx) {
+  .order {
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    grid-template-areas:
+      'list list'
+      'more more'
+      'total total';
+  }
+}

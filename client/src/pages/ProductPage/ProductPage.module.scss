@@ -1,0 +1,14 @@
+@import '@styles/main';
+
+.page {
+  display: grid;
+  grid-auto-flow: row;
+  margin-top: $margin-items;
+  row-gap: $margin-items;
+}
+
+@include media(md, mx) {
+  .page {
+    row-gap: 5rem;
+  }
+}

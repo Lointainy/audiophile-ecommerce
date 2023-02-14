@@ -1,0 +1,13 @@
+@import '@styles/main';
+
+.btn {
+  @include body-main;
+  @include container(padding);
+  color: color(subtitle);
+  cursor: pointer;
+  text-transform: capitalize;
+
+  &:hover {
+    color: $color-orange;
+  }
+}

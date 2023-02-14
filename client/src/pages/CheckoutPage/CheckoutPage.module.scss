@@ -1,0 +1,17 @@
+@import '@styles/main';
+
+.page {
+  @include container(padding);
+  display: grid;
+  row-gap: $margin-items;
+  padding-top: $margin-items;
+  padding-bottom: $margin-items;
+  background: $color-silver;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-auto-rows: max-content;
+  column-gap: 1.875rem;
+}

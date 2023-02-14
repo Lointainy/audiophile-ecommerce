@@ -1,0 +1,61 @@
+/* Colors */
+
+$color-orange: #d87c4a;
+$color-orange-light: #faaf84;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-dark: #101010;
+$color-silver: #f1f1f1;
+$color-silver-light: #fafafa;
+$color-red: #cd2c2c;
+
+/* Animation */
+$animate: ease-in-out 0.5s;
+
+$border-radius: 0.5rem;
+$margin-items: 3.5rem;
+
+/* Z-index */
+$i-header: 4;
+$i-footer: 4;
+$i-content: 2;
+$i-modal: 3;
+$i-zero: 0;
+
+/* Container & Media */
+
+$container-mw: 1110px !default; // width container
+$grid-columns: 12 !default; // numbers columns
+$grid-space: 80px; // margin
+$grid-space-side: calc($grid-space / 2); // margin one side
+
+// DON`T TOUCH
+$grid-bp: (
+  xs: 0px,
+  // Extra small screen / phone
+  sm: 576px,
+  // Small screen / phone
+  md: 768px,
+  // Medium screen / tablet
+  lg: 992px,
+  // Large screen / desktop
+  xl: 1200px,
+  // Extra large screen / wide desktop
+  xxl: 1400px,
+  // Extra large screen / wide desktop
+) !default;
+
+$media-value: (
+  mx: max,
+  // desctop first
+  mn: min,
+  // mobile first
+) !default;
+
+//default breakpoits for container width values
+$container-value: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: $container-mw,
+);
