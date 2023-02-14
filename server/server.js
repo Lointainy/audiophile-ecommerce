@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000
 app.use(
 	cors({
 		methods: '*',
-		origin: ['http://localhost:5173', 'http://192.168.0.100:5173', 'https://audiophile-ecommerce-react-lointainy.netlify.app/']
+		origin: ['http://localhost:5173', 'http://192.168.0.100:5173', 'https://audiophile-ecommerce-react-lointainy.netlify.app']
 	})
 )
 
