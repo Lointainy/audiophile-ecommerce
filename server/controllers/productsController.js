@@ -3,7 +3,11 @@ const Product = require('../models/productsModel')
 const getProducts = async (req, res) => {
 	try {
 		const products = await Product.find(req.query)
-		products = [] ? res.status(404).json(`no category`) : res.status(200).json(products)
+		if (products.length) {
+			res.status(200).json(products)
+		} else {
+			res.status(404).json(`No category`)
+		}
 	} catch (error) {
 		res.status(500).json({ msg: error.message })
 	}
