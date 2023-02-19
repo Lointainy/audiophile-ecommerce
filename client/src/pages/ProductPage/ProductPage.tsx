@@ -1,29 +1,28 @@
 import { useEffect } from 'react'
 
 /* Store */
-import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { getProduct } from '@store/reducers/dataSlice'
+import { useAppDispatch } from '@hooks/useRedux'
+import { useGetProductQuery } from '@/store/reducers/productsApi'
 import { addToCart } from '@store/reducers/cartSlice'
 
 /* Router */
 import { useParams } from 'react-router-dom'
 
 /* Components */
-import { BackButton, CategoryList, OtherInfo, OtherProducts, PhotoGallery, ProductInfo } from '@components'
+import { BackButton, CategoryList, Loader, OtherInfo, OtherProducts, PhotoGallery, ProductInfo } from '@components'
 
 /* Styles */
 import style from './ProductPage.module.scss'
 
 const ProductPage: React.FC = () => {
-  const { productName } = useParams()
-
   const dispatch = useAppDispatch()
 
-  const product = useAppSelector((store) => store.data.product)
+  const { productName } = useParams()
+
+  const { data: product = {}, isLoading, isSuccess } = useGetProductQuery(productName)
 
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
-    dispatch(getProduct(productName))
   }, [productName])
 
   const handleAddProduct = (quantity: number) => {
@@ -34,11 +33,15 @@ const ProductPage: React.FC = () => {
   return (
     <div className={style.page}>
       <BackButton />
-      <ProductInfo product={product} addProduct={handleAddProduct} />
-      <OtherInfo features={product.features} includes={product.includes} />
-      <PhotoGallery gallery={product.gallery} />
-      <OtherProducts products={product.others} />
-
+      {isSuccess && (
+        <>
+          <ProductInfo product={product} addProduct={handleAddProduct} />
+          <OtherInfo features={product.features} includes={product.includes} />
+          <PhotoGallery gallery={product.gallery} />
+          <OtherProducts products={product.others} />
+        </>
+      )}
+      {isLoading && <Loader />}
       <CategoryList />
     </div>
   )

@@ -11,9 +11,7 @@ import { useMediaQuery } from '@hooks/useMediaQuery'
 /* Styles */
 import style from './ProductsByCategory.module.scss'
 
-const ProductsByCategory: React.FC = () => {
-  const products = useAppSelector((store) => store.data.category)
-
+const ProductsByCategory: React.FC = ({ products }) => {
   const {
     mediaQuery: { name: picSize },
   } = useMediaQuery()

@@ -1,27 +1,21 @@
-import { useEffect } from 'react'
-
 /* Store */
-import { useAppDispatch } from '@hooks/useRedux'
-import { getGalleryProducts, getNewProduct } from '@store/reducers/dataSlice'
+import { useGetGalleryQuery } from '@store/reducers/productsApi'
 
 /* Components */
-import { CategoryList, ProductsGallery } from '@components'
+import { CategoryList, Loader, ProductsGallery } from '@components'
 
 /* Styles */
 import style from './HomePage.module.scss'
 
 const HomePage: React.FC = () => {
-  const dispatch = useAppDispatch()
+  const products = useGetGalleryQuery()
 
-  useEffect(() => {
-    dispatch(getNewProduct())
-    dispatch(getGalleryProducts())
-  }, [])
   return (
     <>
       <div className={style.page}>
         <CategoryList />
-        <ProductsGallery />
+        {products.isSuccess && <ProductsGallery products={products.data} />}
+        {products.isLoading && <Loader />}
       </div>
     </>
   )

@@ -5,12 +5,10 @@ import { useAppSelector } from '@hooks/useRedux'
 import GalleryList from './GalleryList/GalleryList'
 import style from './ProductsGallery.module.scss'
 
-const ProductsGallery: React.FC = () => {
-  const galleryList = useAppSelector((store) => store.data.galleryProducts)
-
+const ProductsGallery: React.FC = ({ products }) => {
   return (
     <div className={style.gallery}>
-      <GalleryList products={galleryList} />
+      <GalleryList products={products} />
     </div>
   )
 }
