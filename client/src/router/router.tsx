@@ -2,9 +2,8 @@ import { createBrowserRouter } from 'react-router-dom'
 import { ROUTES } from './routes'
 
 /* Pages */
-import CategoryPage from '@/pages/CategoryPage/CategoryPage'
 import Layout from '@layout/Layout'
-import { CheckoutPage, HomePage, NotFoundPage, ProductPage } from '@pages'
+import { CheckoutPage, HomePage, NotFoundPage, ProductPage, CategoryPage } from '@pages'
 
 const router = createBrowserRouter([
   {
