@@ -5,10 +5,8 @@ const API_URL = import.meta.env.VITE_API_URL
 
 const initialState = {
   products: [],
-  product: {},
-  newProduct: {},
-  galleryProducts: [],
-  category: [],
+  isLoading: false,
+  isError: false,
 }
 
 export const getProducts = createAsyncThunk('products/getProducts', async () => {
@@ -16,82 +14,23 @@ export const getProducts = createAsyncThunk('products/getProducts', async () => 
   return data
 })
 
-export const getProduct = createAsyncThunk('products/getProduct', async (name: undefined | string) => {
-  const { data } = await axios.get(`${API_URL}/products/${name}`)
-  return data
-})
-
-export const getNewProduct = createAsyncThunk('products/getNewProduct', async () => {
-  const { data } = await axios.get(`${API_URL}/new`)
-  return data
-})
-
-export const getGalleryProducts = createAsyncThunk('products/getGalleryProducts', async () => {
-  const { data } = await axios.get(`${API_URL}/gallery`)
-  return data
-})
-
-export const getProductsByCategory = createAsyncThunk(
-  'products/getProductsByCategory',
-  async (categoryItems: string | undefined) => {
-    const { data } = await axios.get(`${API_URL}/products`, {
-      params: {
-        category: categoryItems,
-      },
-    })
-    return data
-  }
-)
-
 export const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    /* Get one product */
-    builder
-      .addCase(getProduct.pending, (state) => {
-        state.product = {}
-      })
-      .addCase(getProduct.fulfilled, (state, action) => {
-        state.product = action.payload
-        console.log('product', state.product)
-      })
     /* Get all products */
     builder
       .addCase(getProducts.pending, (state) => {
         state.products = []
+        state.isLoading = true
       })
       .addCase(getProducts.fulfilled, (state, action) => {
         state.products = action.payload
-        console.log('products', state.products)
+        state.isLoading = false
       })
-    /* Get all products by category*/
-    builder
-      .addCase(getProductsByCategory.pending, (state) => {
-        state.category = []
-      })
-      .addCase(getProductsByCategory.fulfilled, (state, action) => {
-        state.category = action.payload.sort((a: any, b: any) => b.new - a.new)
-        console.log('category', state.category)
-      })
-    /* Get new products */
-    builder
-      .addCase(getNewProduct.pending, (state) => {
-        state.newProduct = {}
-      })
-      .addCase(getNewProduct.fulfilled, (state, action) => {
-        state.newProduct = action.payload
-        console.log('new', state.newProduct)
-      })
-    /* Get gallery products for home page */
-    builder
-      .addCase(getGalleryProducts.pending, (state) => {
-        state.galleryProducts = []
-      })
-      .addCase(getGalleryProducts.fulfilled, (state, action) => {
-        state.galleryProducts = action.payload
-        console.log('gallery', state.galleryProducts)
+      .addCase(getProducts.rejected, (state) => {
+        state.isError = true
       })
   },
 })
