@@ -16,8 +16,8 @@ const GalleryItem: React.FC = ({ id, name, slug, img, description }) => {
   return (
     <li className={style.item}>
       {id == 1 ? <img src="assets/home/desktop/pattern-circles.svg" alt="" className={style.pattern} /> : ''}
-      <div className={style.pic}>
-        <img src={`${img[picSize]}`} alt="" className={style.img} />
+      <div className={style.img}>
+        <img src={`${img[picSize]}`} alt="" />
       </div>
       <div className={style.field}>
         <div className={style.content}>

@@ -8,15 +8,22 @@
 }
 
 /* MEDIA */
+@include media(lg, mx) {
+  .list {
+    .list {
+      grid-template-rows: max-content repeat(2, 20rem);
+    }
+  }
+}
 
 @include media(md, mx) {
   .list {
-    grid-template-rows: 45rem repeat(2, 20rem);
+    grid-template-rows: max-content 20rem max-content;
   }
 }
 
 @include media(sm, mx) {
   .list {
-    grid-template-rows: 37.5rem 20rem 26.5rem;
+    grid-template-rows: max-content 20rem max-content;
   }
 }
