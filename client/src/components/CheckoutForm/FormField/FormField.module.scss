@@ -1,6 +1,7 @@
 @import '@styles/main';
 
-.field {
+.area {
+  width: 100%;
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: max-content 3.5rem;
@@ -14,10 +15,10 @@
 }
 
 .input {
-  @include body-subtitle;
   all: unset;
-  padding: 0 1.5rem;
-  border: none;
+  --padding: 1.5rem;
+  width: calc(100% - (var(--padding) * 2) - 2px);
+  padding: 0 var(--padding);
   border-radius: $border-radius;
   color: color(title);
   border: 1px solid color(fieldBg);

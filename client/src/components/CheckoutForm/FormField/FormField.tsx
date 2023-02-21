@@ -11,7 +11,7 @@ import style from './FormField.module.scss'
 
 const FormField: React.FC<Props> = ({ gridArea, label, id, value, placeholder, handleChange }) => {
   return (
-    <label className={style.field} style={{ gridArea: gridArea }}>
+    <label className={style.area} style={{ gridArea: gridArea }}>
       <span className={style.label}>{label}</span>
       <input
         className={style.input}
