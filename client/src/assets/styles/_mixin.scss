@@ -84,6 +84,26 @@
   }
 }
 
+@mixin btn-border {
+  @include body-subtitle;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  text-transform: uppercase;
+  height: 3rem;
+  padding: 0 1.875rem;
+  width: fit-content;
+  border: 1px solid $color-black;
+
+  &:hover {
+    cursor: pointer;
+    transition: $animate;
+    color: $color-white;
+    background: $color-black;
+  }
+}
+
 @mixin btn-link {
   @include body-subtitle;
   color: $color-orange;
