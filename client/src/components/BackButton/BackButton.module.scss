@@ -2,7 +2,6 @@
 
 .btn {
   @include body-main;
-  @include container(padding);
   color: color(subtitle);
   cursor: pointer;
   text-transform: capitalize;
