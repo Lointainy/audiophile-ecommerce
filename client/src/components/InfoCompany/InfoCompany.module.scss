@@ -9,16 +9,16 @@
   grid-auto-rows: 37.5rem;
   align-items: center;
   column-gap: 1.875rem;
-  grid-template-areas: 'field-content image';
+  grid-template-areas: 'content image';
 }
 
 .field {
-  grid-area: field-content;
+  grid-area: content;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 450px;
+  // grid-template-columns: 450px;
   row-gap: 2rem;
 }
 
@@ -32,6 +32,7 @@
 }
 
 .img {
+  grid-area: image;
   position: relative;
   height: 100%;
   width: 100%;
@@ -51,24 +52,38 @@
 /* MEDIA */
 @include media(lg, mx) {
   .info {
-    grid-template-columns: 1fr;
-    grid-template-rows: 300px max-content;
-    grid-template-areas:
-      'image image'
-      'field-content field-content';
-    row-gap: 1.5rem;
+    grid-template-rows: 20rem;
   }
 
-  .field {
-    padding: 0 1.5rem;
-    text-align: center;
-  }
-
-  .content {
-    grid-template-columns: 1fr;
+  .img {
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 }
+
 @include media(md, mx) {
+  .info {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: 18.75rem max-content;
+    row-gap: 4rem;
+    grid-template-areas:
+      'image image'
+      'content content';
+  }
+
+  .img {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+@include media(sm, mx) {
   .img {
     img {
       width: 100%;
@@ -76,3 +91,41 @@
     }
   }
 }
+
+@include mediaWidth(400px, mx) {
+  .img {
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+// /* MEDIA */
+// @include media(lg, mx) {
+//   .info {
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 300px max-content;
+//     grid-template-areas:
+//       'image image'
+//       'field-content field-content';
+//     row-gap: 1.5rem;
+//   }
+
+//   .field {
+//     padding: 0 1.5rem;
+//     text-align: center;
+//   }
+
+//   .content {
+//     grid-template-columns: 1fr;
+//   }
+// }
+// @include media(md, mx) {
+//   .img {
+//     img {
+//       width: 100%;
+//       height: auto;
+//     }
+//   }
+// }
