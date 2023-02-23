@@ -1,141 +1,54 @@
-import { useState } from 'react'
-
 /* Styles */
 import style from './CheckoutForm.module.scss'
 
+/* Icons */
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+
 /* Components */
-import FormField from './FormField/FormField'
-import RadioField from './RadioField/RadioField'
+import FormInput from './FormInput/FormInput'
+import FormRadio from './FormRadio/FormRadio'
 
-/* Types */
-type Props = {
-  form: {
-    name: string
-    email: string
-    phone: string
-    address: string
-    code: string
-    city: string
-    country: string
-    payment: string
-    eNumber: string
-    ePin: string
-  }
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
+const CheckoutForm = (props) => {
+  const { fields, values, options, onChange } = props
 
-const CheckoutForm: React.FC<Props> = ({ form, handleChange }) => {
   return (
     <div className={style.form}>
-      <h6 className={style.title}>Billing Details</h6>
+      <h3 className={style.title}>Checkout</h3>
 
-      <div className={`${style.list} ${style.billing}`}>
-        <FormField
-          gridArea={'name'}
-          label={'name'}
-          id={'name'}
-          value={form.name}
-          placeholder={'Alexei Ward'}
-          handleChange={handleChange}
-        />
-        <FormField
-          gridArea={'email'}
-          label={'email address'}
-          id={'email'}
-          value={form.email}
-          placeholder={'alexei@mail.com'}
-          handleChange={handleChange}
-        />
-        <FormField
-          gridArea={'phone'}
-          label={'phone number'}
-          id={'phone'}
-          value={form.phone}
-          placeholder={'+1 202-555-0136'}
-          handleChange={handleChange}
-        />
-      </div>
+      {fields.slice(0, 2).map((field) => (
+        <div key={field.id} className={`${style.section} ${style[field.class]}`}>
+          <h6 className={style.subtitle}>{field.title}</h6>
 
-      <h6 className={style.title}>shipping info</h6>
+          {field.inputs.map((input) => (
+            <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+          ))}
+        </div>
+      ))}
 
-      <div className={`${style.list} ${style.shipping}`}>
-        <FormField
-          gridArea={'address'}
-          label={'address'}
-          id={'address'}
-          value={form.address}
-          placeholder={'1137 Williams Avenue'}
-          handleChange={handleChange}
-        />
-        <FormField
-          gridArea={'code'}
-          label={'ZIP code'}
-          id={'code'}
-          value={form.code}
-          placeholder={'10001'}
-          handleChange={handleChange}
-        />
-        <FormField
-          gridArea={'city'}
-          label={'City'}
-          id={'city'}
-          value={form.city}
-          placeholder={'New York'}
-          handleChange={handleChange}
-        />
-        <FormField
-          gridArea={'country'}
-          label={'country'}
-          id={'country'}
-          value={form.country}
-          placeholder={'United States'}
-          handleChange={handleChange}
-        />
-      </div>
+      {fields.slice(2, 3).map((field) => (
+        <div key={field.id} className={`${style.section} ${style[field.class]}`}>
+          <h6 className={style.subtitle}>{field.title}</h6>
 
-      <h6 className={style.title}>payment details</h6>
+          {field.inputs.map((input) => (
+            <FormRadio key={input.id} {...input} payment={values.payment} onChange={onChange} />
+          ))}
 
-      <div className={`${style.list} ${style.payment}`}>
-        <span className={style.subtitle}>Payment method</span>
-        <RadioField
-          gridArea={'emoney'}
-          name={'payment'}
-          id={'emoney'}
-          value={'e-Money'}
-          handleChange={handleChange}
-          label={'e-Money'}
-        />
-        <RadioField
-          gridArea={'cash'}
-          name={'payment'}
-          id={'cash'}
-          value={'Cash on Delivery'}
-          handleChange={handleChange}
-          label={'Cash on Delivery'}
-        />
-        {form.payment == 'e-Money' ? (
-          <>
-            <FormField
-              gridArea={'enumber'}
-              label={'e-Money Number'}
-              id={'eNumber'}
-              value={form.eNumber}
-              placeholder={'238521993'}
-              handleChange={handleChange}
-            />
-            <FormField
-              gridArea={'epin'}
-              label={'e-Money PIN'}
-              id={'ePin'}
-              value={form.ePin}
-              placeholder={'2568'}
-              handleChange={handleChange}
-            />
-          </>
-        ) : (
-          ''
-        )}
-      </div>
+          {values.payment == 'emoney' &&
+            options.map((input) => (
+              <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+            ))}
+
+          {values.payment == 'cash' && (
+            <div className={style.info}>
+              <Icon icon="truck-ramp-box" className={style.icon} />
+              <p className={style.desc}>
+                The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your
+                residence. Just make sure your address is correct so that your order will not be cancelled.
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   )
 }
