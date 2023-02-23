@@ -19,6 +19,7 @@ import '@fontsource/manrope/700.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import {
+  faTruckRampBox,
   faBars,
   faCartShopping,
   faChevronLeft,
@@ -32,6 +33,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faTruckRampBox,
   faCartShopping,
   faPlus,
   faMinus,
