@@ -5,7 +5,7 @@ import { useTheme } from '@hooks/useTheme'
 
 /* Store */
 import { useAppDispatch } from '@hooks/useRedux'
-import { SET_THEME } from '@store/reducers/uiSlice'
+import { setTheme } from '@store/reducers/uiSlice'
 
 /* Style */
 import style from './SwitchTheme.module.scss'
@@ -19,7 +19,7 @@ const SwitchTheme: React.FC = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(SET_THEME(userTheme))
+    dispatch(setTheme(userTheme))
   }, [theme])
 
   return (

@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+interface Istate {
+  colorTheme: string
+  nav: boolean
+}
+
+const initialState: Istate = {
   colorTheme: 'light',
   nav: false,
 }
@@ -9,7 +14,7 @@ export const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    SET_THEME: (state, action) => {
+    setTheme: (state, action) => {
       state.colorTheme = action.payload
     },
     toggleNav: (state) => {
@@ -18,6 +23,6 @@ export const uiSlice = createSlice({
   },
 })
 
-export const { SET_THEME, toggleNav } = uiSlice.actions
+export const { setTheme, toggleNav } = uiSlice.actions
 
 export default uiSlice.reducer
