@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 /* Store */
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { CLOSE_MODAL, OPEN_MODAL } from '@store/reducers/modalSlice'
+import { closeModal, openModal } from '@store/reducers/modalSlice'
 import { clearErrorQuantity } from '@store/reducers/cartSlice'
 
 /* Styles */
@@ -19,21 +19,21 @@ const Modals: React.FC = () => {
   const { errorQuantity } = useAppSelector((store) => store.cart)
 
   useEffect(() => {
-    errorQuantity == true && dispatch(OPEN_MODAL('ErrorQuantity'))
+    errorQuantity == true && dispatch(openModal('ErrorQuantity'))
   }, [errorQuantity])
 
   const handleClose = () => {
-    dispatch(CLOSE_MODAL())
+    dispatch(closeModal())
     errorQuantity == true && dispatch(clearErrorQuantity())
   }
 
   return (
     <>
-      {getModal.ModalOpen && (
+      {getModal.modalOpen && (
         <div className={style.overlay} onClick={handleClose}>
           <div className={style.field} onClick={(e) => e.stopPropagation()}>
-            {getModal.ModalType === 'ErrorQuantity' && <ErrorQuantity />}
-            {getModal.ModalType === 'CheckoutOrder' && <CheckoutOrder />}
+            {getModal.modalType === 'ErrorQuantity' && <ErrorQuantity />}
+            {getModal.modalType === 'CheckoutOrder' && <CheckoutOrder />}
           </div>
         </div>
       )}

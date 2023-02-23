@@ -1,6 +1,6 @@
 /* Store */
 import { useAppDispatch } from '@hooks/useRedux'
-import { CLOSE_MODAL, OPEN_MODAL } from '@store/reducers/modalSlice'
+import { closeModal } from '@store/reducers/modalSlice'
 import { clearErrorQuantity } from '@store/reducers/cartSlice'
 
 /* Styles */
@@ -10,7 +10,7 @@ const ErrorQuantity: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const handleClose = () => {
-    dispatch(CLOSE_MODAL())
+    dispatch(closeModal())
     dispatch(clearErrorQuantity())
   }
 

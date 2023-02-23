@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 /* Store */
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { OPEN_MODAL } from '@store/reducers/modalSlice'
+import { openModal } from '@store/reducers/modalSlice'
 
 /* Styles */
 import style from './CheckoutPage.module.scss'
@@ -161,7 +161,7 @@ const CheckoutPage: React.FC = () => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    dispatch(OPEN_MODAL('CheckoutOrder'))
+    dispatch(openModal('CheckoutOrder'))
   }
 
   const onChange = (e) => {

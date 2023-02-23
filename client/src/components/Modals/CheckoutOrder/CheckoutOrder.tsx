@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 /* Store */
 import { useAppSelector, useAppDispatch } from '@hooks/useRedux'
-import { CLOSE_MODAL } from '@store/reducers/modalSlice'
+import { closeModal } from '@store/reducers/modalSlice'
 import { clearCart } from '@store/reducers/cartSlice'
 
 /* Hooks */
@@ -34,7 +34,7 @@ const CheckoutOrder: React.FC = () => {
 
   const handleClose = () => {
     dispatch(clearCart())
-    dispatch(CLOSE_MODAL())
+    dispatch(closeModal())
   }
 
   const handleLoadMore = () => {
