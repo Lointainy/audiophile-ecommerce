@@ -1,6 +1,6 @@
 import { imgType } from './products'
 
-export interface InewProducts {
+export interface InewProduct {
   slug: string
   name: string
   description: string

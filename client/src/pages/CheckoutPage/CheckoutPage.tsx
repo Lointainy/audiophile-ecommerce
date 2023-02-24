@@ -9,13 +9,14 @@ import style from './CheckoutPage.module.scss'
 
 /* Components */
 import { BackButton, CheckoutForm, SummaryField, EmptyCart } from '@components'
+import { fieldsType, formValues, optionType } from '@types'
 
 const CheckoutPage: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const { order } = useAppSelector((store) => store.cart)
 
-  const [values, setValues] = useState({
+  const [values, setValues] = useState<formValues>({
     username: '',
     email: '',
     phoneNumber: '',
@@ -28,7 +29,7 @@ const CheckoutPage: React.FC = () => {
     ePin: '',
   })
 
-  const fields = [
+  const fields: fieldsType[] = [
     {
       id: 1,
       title: 'billing details',
@@ -136,7 +137,7 @@ const CheckoutPage: React.FC = () => {
     },
   ]
 
-  const options = [
+  const options: optionType = [
     {
       id: 1,
       name: 'eNumber',
@@ -164,7 +165,7 @@ const CheckoutPage: React.FC = () => {
     dispatch(openModal('CheckoutOrder'))
   }
 
-  const onChange = (e) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
 

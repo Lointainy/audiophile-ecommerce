@@ -8,7 +8,17 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import FormInput from './FormInput/FormInput'
 import FormRadio from './FormRadio/FormRadio'
 
-const CheckoutForm = (props) => {
+/* Types */
+import { fieldsType, formValues, optionType } from '@types'
+import { PropsWithChildren } from 'react'
+interface Props extends PropsWithChildren {
+  fields: fieldsType[]
+  values: formValues
+  options: optionType
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const CheckoutForm: React.FC<Props> = (props) => {
   const { fields, values, options, onChange } = props
 
   return (
