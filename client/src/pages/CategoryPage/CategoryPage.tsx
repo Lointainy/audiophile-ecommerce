@@ -4,7 +4,8 @@ import { useEffect } from 'react'
 import { useGetCategoryQuery } from '@store/reducers/productsApi'
 
 /* Router */
-import { useParams } from 'react-router-dom'
+import { ROUTES } from '@router/routes'
+import { useParams, useNavigate } from 'react-router-dom'
 
 /* Styles */
 import style from './CategoryPage.module.scss'
@@ -15,7 +16,13 @@ import { CategoryList, Loader, ProductsByCategory } from '@components'
 const CategoryPage: React.FC = () => {
   const { categoryName } = useParams()
 
-  const { data, isSuccess, isLoading } = useGetCategoryQuery(categoryName)
+  const { data, isSuccess, isLoading, isError } = useGetCategoryQuery(categoryName)
+
+  let navigate = useNavigate()
+
+  useEffect(() => {
+    isError && navigate(`${ROUTES.error}`)
+  }, [isError])
 
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
