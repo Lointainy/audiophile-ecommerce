@@ -1,5 +1,8 @@
 const express = require('express')
 
+const fs = require('fs')
+const path = require('path')
+
 const cors = require('cors')
 
 const dotenv = require('dotenv').config()
@@ -24,7 +27,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use('/api', productsRoutes)
 
-app.get('/', (req, res) => res.send(`Server is running on ${PORT}`))
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, '/index.html'))
+})
 
 const startServer = async () => {
 	try {
