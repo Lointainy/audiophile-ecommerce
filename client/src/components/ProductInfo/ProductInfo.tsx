@@ -6,9 +6,16 @@ import style from './ProductInfo.module.scss'
 
 /* Icons */
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
-const ProductInfo: React.FC = ({ product, addProduct }) => {
+/* Types */
+import { Iproduct } from '@types'
+interface Props extends PropsWithChildren {
+  product: Iproduct
+  addProduct: (quantity: number) => void
+}
+
+const ProductInfo: React.FC<Props> = ({ product, addProduct }) => {
   const [quantity, setQuantity] = useState(1)
 
   const {

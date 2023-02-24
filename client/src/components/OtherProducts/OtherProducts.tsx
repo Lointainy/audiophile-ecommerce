@@ -7,8 +7,15 @@ import { useMediaQuery } from '@hooks/useMediaQuery'
 
 /* Styles */
 import style from './OtherProducts.module.scss'
+import { PropsWithChildren } from 'react'
 
-const OtherProducts: React.FC = ({ products }) => {
+/* Types */
+import { otherType } from '@types'
+interface Props extends PropsWithChildren {
+  products: otherType[]
+}
+
+const OtherProducts: React.FC<Props> = ({ products }) => {
   const {
     mediaQuery: { name: picSize },
   } = useMediaQuery()

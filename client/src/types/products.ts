@@ -8,15 +8,11 @@ export interface Iproduct {
   categoryImage: imgType
   new: boolean
   price: number
-  description: number
-  features: number
+  description: string
+  features: string
   includes: includeType[]
-  gallery: {
-    first: imgType
-    second: imgType
-    third: imgType
-  }
-  others: otherProduct[]
+  gallery: galleryType
+  others: otherType[]
   quantity: number
 }
 
@@ -29,8 +25,12 @@ export type includeType = {
   item: string
 }
 
-export type otherProduct = {
+export type otherType = {
   slug: string
   name: string
   image: imgType
+}
+
+export type galleryType = {
+  [index: string]: imgType
 }

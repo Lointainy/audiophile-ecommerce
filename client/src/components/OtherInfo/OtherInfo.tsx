@@ -1,7 +1,15 @@
 /* Styles */
+import { PropsWithChildren } from 'react'
 import style from './OtherInfo.module.scss'
 
-const OtherInfo: React.FC = ({ features, includes }) => {
+/* Types */
+import { includeType } from '@types'
+interface Props extends PropsWithChildren {
+  features: string
+  includes: includeType[]
+}
+
+const OtherInfo: React.FC<Props> = ({ features, includes }) => {
   return (
     <div className={style.info}>
       <div className={style.features}>

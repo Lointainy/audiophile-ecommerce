@@ -19,7 +19,7 @@ const ProductPage: React.FC = () => {
 
   const { productName } = useParams()
 
-  const { data: product = {}, isLoading, isSuccess } = useGetProductQuery(productName)
+  const { data: product, isLoading, isSuccess } = useGetProductQuery(productName)
 
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
