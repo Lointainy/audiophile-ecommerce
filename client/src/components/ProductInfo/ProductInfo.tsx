@@ -31,10 +31,6 @@ const ProductInfo: React.FC<Props> = ({ product, addProduct }) => {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuantity(Number(e.target.value))
-  }
-
   return (
     <div className={style.info}>
       {product.categoryImage ? (
