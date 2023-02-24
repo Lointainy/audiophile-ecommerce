@@ -19,7 +19,7 @@ const Layout: React.FC = () => {
 
   let navigate = useNavigate()
 
-  const { isLoading, isError } = useGetProductsQuery()
+  const { isLoading, isError, isSuccess } = useGetProductsQuery()
 
   useEffect(() => {
     isError && navigate(`${ROUTES.error}`)
@@ -27,9 +27,8 @@ const Layout: React.FC = () => {
 
   return (
     <>
-      {isLoading ? (
-        <StarterLoader />
-      ) : (
+      {isLoading && <StarterLoader />}
+      {isSuccess && (
         <>
           <Modals />
           <Header />
