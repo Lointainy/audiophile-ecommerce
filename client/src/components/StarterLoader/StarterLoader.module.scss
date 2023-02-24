@@ -18,6 +18,7 @@
 }
 
 .desc {
+  @include container(padding);
   color: color(subtitle);
   position: relative;
 }
