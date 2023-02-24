@@ -4,7 +4,15 @@ import style from './GalleryList.module.scss'
 /* Components */
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-const GalleryList: React.FC = ({ products }) => {
+/* Types */
+import { Igallery } from '@/types'
+import { PropsWithChildren } from 'react'
+
+interface Props extends PropsWithChildren {
+  products: Igallery[]
+}
+
+const GalleryList: React.FC<Props> = ({ products }) => {
   return (
     <ul className={style.list}>
       {products.map((product) => {

@@ -1,9 +1,18 @@
+import { Iproduct } from '@types'
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+
 import axios from 'axios'
 
 const API_URL = import.meta.env.VITE_API_URL
 
-const initialState = {
+type stateType = {
+  products: Iproduct[]
+  isLoading: boolean
+  isError: boolean
+}
+
+const initialState: stateType = {
   products: [],
   isLoading: false,
   isError: false,

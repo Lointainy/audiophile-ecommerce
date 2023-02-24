@@ -8,14 +8,14 @@ import { CategoryList, Loader, ProductsGallery } from '@components'
 import style from './HomePage.module.scss'
 
 const HomePage: React.FC = () => {
-  const products = useGetGalleryQuery()
+  const { data, isSuccess, isLoading } = useGetGalleryQuery()
 
   return (
     <>
       <div className={style.page}>
         <CategoryList />
-        {products.isSuccess && <ProductsGallery products={products.data} />}
-        {products.isLoading && <Loader />}
+        {isSuccess && <ProductsGallery products={data} />}
+        {isLoading && <Loader />}
       </div>
     </>
   )

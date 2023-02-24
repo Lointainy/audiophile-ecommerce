@@ -1,6 +1,12 @@
 import { useLayoutEffect, useState } from 'react'
 
-const queries = [
+type queriesType = {
+  name: string
+  query: string
+  status: boolean
+}
+
+const queries: queriesType[] = [
   { name: 'mobile', query: '(max-width: 575px)', status: false },
   { name: 'tablet', query: '(min-width: 576px) and (max-width: 767px)', status: false },
   { name: 'desktop', query: '(min-width: 768px)', status: false },

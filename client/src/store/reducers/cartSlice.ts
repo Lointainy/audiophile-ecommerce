@@ -1,7 +1,8 @@
+import { Iproduct } from '@types'
 import { createSlice } from '@reduxjs/toolkit'
 
-interface CartState {
-  order: any[]
+interface Istate {
+  order: Iproduct[]
   total: number
   shipping: number
   vat: number
@@ -10,7 +11,7 @@ interface CartState {
   errorQuantity: boolean
 }
 
-const initialState: CartState = {
+const initialState: Istate = {
   order: [],
   total: 0,
   shipping: 50,
@@ -61,7 +62,7 @@ export const cartSlice = createSlice({
 
       if (find >= 0) {
         state.order[find].quantity >= 1 ? (state.order[find].quantity -= 1) : ''
-        state.order = state.order.filter((product) => product.quantity > 0)
+        state.order = state.order.filter((product) => product?.quantity > 0)
       } else {
         state.order = [...state.order, action.payload]
       }

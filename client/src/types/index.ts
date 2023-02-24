@@ -1,6 +1,4 @@
-export type linksType = {
-  id: number
-  title: string
-  url: string
-  img?: string | undefined
-}
+export * from './links'
+export * from './products'
+export * from './gallery'
+export * from './newProducts'
