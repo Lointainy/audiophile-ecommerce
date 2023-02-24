@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 /* Types */
-import { Igallery } from '@types'
+import { Igallery, Iproduct } from '@types'
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -21,7 +21,7 @@ export const productsApi = createApi({
     getGallery: builder.query<Igallery[], void>({
       query: () => `gallery`,
     }),
-    getCategory: builder.query({
+    getCategory: builder.query<Iproduct[], string | undefined>({
       query: (categoryName) => ({
         url: `products`,
         params: {

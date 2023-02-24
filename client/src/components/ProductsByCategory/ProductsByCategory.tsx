@@ -2,16 +2,19 @@
 import { ROUTES } from '@router/routes'
 import { NavLink } from 'react-router-dom'
 
-/* Store */
-import { useAppSelector } from '@/hooks/useRedux'
-
 /* Hooks */
 import { useMediaQuery } from '@hooks/useMediaQuery'
 
 /* Styles */
 import style from './ProductsByCategory.module.scss'
+import { Iproduct } from '@/types'
+import { PropsWithChildren } from 'react'
 
-const ProductsByCategory: React.FC = ({ products }) => {
+interface Props extends PropsWithChildren {
+  products: Iproduct[]
+}
+
+const ProductsByCategory: React.FC<Props> = ({ products }) => {
   const {
     mediaQuery: { name: picSize },
   } = useMediaQuery()

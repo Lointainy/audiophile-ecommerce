@@ -7,13 +7,15 @@ import { useGetCategoryQuery } from '@store/reducers/productsApi'
 import { useParams } from 'react-router-dom'
 
 /* Styles */
-import { CategoryList, Loader, ProductsByCategory } from '@components'
 import style from './CategoryPage.module.scss'
+
+/* Components */
+import { CategoryList, Loader, ProductsByCategory } from '@components'
 
 const CategoryPage: React.FC = () => {
   const { categoryName } = useParams()
 
-  const products = useGetCategoryQuery(categoryName)
+  const { data, isSuccess, isLoading } = useGetCategoryQuery(categoryName)
 
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -25,8 +27,8 @@ const CategoryPage: React.FC = () => {
         <h2 className={style.title}>{categoryName}</h2>
       </div>
 
-      {products.isSuccess && <ProductsByCategory products={products.data} />}
-      {products.isLoading && <Loader />}
+      {isSuccess && <ProductsByCategory products={data} />}
+      {isLoading && <Loader />}
       <CategoryList />
     </div>
   )
