@@ -86,6 +86,7 @@
   height: 3rem;
   background: color(inputBg);
   text-align: center;
+  justify-content: space-between;
 
   .number {
     height: 100%;
@@ -154,6 +155,12 @@
       'title title'
       'description description'
       'price price'
-      'quantity cart';
+      'quantity quantity'
+      'cart cart';
+  }
+
+  .add {
+    width: 100%;
+    padding: 0;
   }
 }
