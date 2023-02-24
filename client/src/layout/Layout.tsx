@@ -5,8 +5,7 @@ import { ROUTES } from '@router/routes'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 /* Store */
-import { useAppSelector, useAppDispatch } from '@hooks/useRedux'
-import { getProducts } from '@store/reducers/dataSlice'
+import { useGetProductsQuery } from '@store/reducers/productsApi'
 
 /* Layout */
 import Footer from './Footer/Footer'
@@ -16,17 +15,11 @@ import Header from './Header/Header'
 import { InfoCompany, Modals, StarterLoader } from '@components'
 
 const Layout: React.FC = () => {
-  const dispatch = useAppDispatch()
-
   const { pathname } = useLocation()
 
   let navigate = useNavigate()
 
-  const { isLoading, isError } = useAppSelector((store) => store.data)
-
-  useEffect(() => {
-    dispatch(getProducts())
-  }, [])
+  const { isLoading, isError } = useGetProductsQuery()
 
   useEffect(() => {
     isError && navigate(`${ROUTES.error}`)

@@ -9,7 +9,7 @@ export const productsApi = createApi({
   reducerPath: 'productsApi',
   baseQuery: fetchBaseQuery({ baseUrl: `${API_URL}` }),
   endpoints: (builder) => ({
-    getProducts: builder.query({
+    getProducts: builder.query<Iproduct[], void>({
       query: () => `products`,
     }),
     getProduct: builder.query<Iproduct, string | undefined>({
