@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     dispatch(setTheme(userTheme))
-  })
+  }, [userTheme])
 
   return (
     <div className={`app ${theme}`}>
