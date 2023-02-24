@@ -20,9 +20,12 @@ export const uiSlice = createSlice({
     toggleNav: (state) => {
       state.nav = !state.nav
     },
+    closeNav: (state) => {
+      state.nav = false
+    },
   },
 })
 
-export const { setTheme, toggleNav } = uiSlice.actions
+export const { setTheme, toggleNav, closeNav } = uiSlice.actions
 
 export default uiSlice.reducer
