@@ -8,7 +8,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 'info';
   background: #191919;
-  height: calc(100vh - 100px);
+  height: 625px;
   align-items: center;
 }
 
@@ -74,5 +74,11 @@
 
   .button {
     margin: 0 auto;
+  }
+}
+
+@include media(md, mx) {
+  .content {
+    height: 500px;
   }
 }
