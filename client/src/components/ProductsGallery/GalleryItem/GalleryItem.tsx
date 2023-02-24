@@ -8,17 +8,11 @@ import { useMediaQuery } from '@hooks/useMediaQuery'
 /* Styles */
 import style from './GalleryItem.module.scss'
 
+/* Types */
 import { PropsWithChildren } from 'react'
+import { Igallery } from '@/types'
 
-interface Props extends PropsWithChildren {
-  id: number
-  name: string
-  slug: string
-  description: string
-  img: { [index: string]: string }
-}
-
-const GalleryItem: React.FC<Props> = ({ id, name, slug, img, description }) => {
+const GalleryItem: React.FC<PropsWithChildren<Igallery>> = ({ id, name, slug, img, description }) => {
   const {
     mediaQuery: { name: picSize },
   } = useMediaQuery()

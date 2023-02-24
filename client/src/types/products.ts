@@ -21,9 +21,7 @@ export interface Iproduct {
 }
 
 export type imgType = {
-  mobile: string
-  tablet: string
-  desktop: string
+  [index: string]: string
 }
 
 export type includeType = {
