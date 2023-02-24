@@ -39,7 +39,9 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className={style.page}>
-      <BackButton />
+      <div className={style.back}>
+        <BackButton />
+      </div>
       {isSuccess && (
         <>
           <ProductInfo product={product} addProduct={handleAddProduct} />

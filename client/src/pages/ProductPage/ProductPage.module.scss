@@ -1,11 +1,14 @@
 @import '@styles/main';
 
 .page {
-  @include container(padding);
   display: grid;
   grid-auto-flow: row;
   margin-top: $margin-items;
   row-gap: $margin-items;
+}
+
+.back {
+  @include container(padding);
 }
 
 @include media(md, mx) {
