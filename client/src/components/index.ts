@@ -14,6 +14,7 @@ export { default as HeaderContent } from './HeaderContent/HeaderContent'
 export { default as InfoCompany } from './InfoCompany/InfoCompany'
 /* Modals */
 export { default as Modals } from './Modals/Modals'
+export { default as CartDropdown } from './CartDropdown/CartDropdown'
 /* Navbar */
 export { default as DesktopNav } from './NavBar/DesktopNav/DesktopNav'
 export { default as MobileNav } from './NavBar/MobileNav/MobileNav'
