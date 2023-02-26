@@ -41,3 +41,12 @@
     column-gap: 0.5rem;
   }
 }
+
+@include media(sm, mx) {
+  .navbar {
+    img {
+      width: auto;
+      max-width: 115px;
+    }
+  }
+}
