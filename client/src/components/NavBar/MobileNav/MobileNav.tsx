@@ -28,16 +28,19 @@ const MobileNav: React.FC = () => {
   }
 
   return (
-    <div className={style.mobile}>
-      <div className={style.icon} onClick={() => dispatch(toggleNav())}>
-        <Icon icon="bars" />
+    <>
+      <div className={nav ? `${style.mobile} ${style.active}` : `${style.mobile}`}>
+        <div className={style.icon} onClick={() => dispatch(toggleNav())}>
+          {!nav ? <Icon icon="bars" /> : <Icon icon="xmark" />}
+        </div>
       </div>
+      {nav && <div className={style.overlay} onClick={handleClose}></div>}
       {nav && (
-        <div className={style.dropdown}>
+        <div className={style.dropdown} onClick={(e) => e.stopPropagation()}>
           <CategoryList closeNav={handleClose} mobile={true} />
         </div>
       )}
-    </div>
+    </>
   )
 }
 export default MobileNav
