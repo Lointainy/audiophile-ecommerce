@@ -3,6 +3,7 @@ export { default as BackButton } from './BackButton/BackButton'
 export { default as EmptyCart } from './EmptyCart/EmptyCart'
 export { default as Loader } from './Loader/Loader'
 export { default as StarterLoader } from './StarterLoader/StarterLoader'
+export { default as CartFloat } from './CartFloat/CartFloat'
 /* Menu / Category */
 export { default as CategoryList } from './CategoryList/CategoryList'
 /* Checkout */

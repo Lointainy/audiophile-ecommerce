@@ -31,7 +31,7 @@ const CartDropdown: React.FC = () => {
 
   return (
     <div className={style.field}>
-      {products.length && (
+      {products.length > 0 && (
         <div className={style.content}>
           <div className={style.header}>
             <div className={style.title}>Cart ({products.length})</div>

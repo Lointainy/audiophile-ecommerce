@@ -12,7 +12,7 @@ import Footer from './Footer/Footer'
 import Header from './Header/Header'
 
 /* Components */
-import { InfoCompany, Modals, StarterLoader } from '@components'
+import { CartFloat, InfoCompany, Modals, StarterLoader } from '@components'
 
 const Layout: React.FC = () => {
   const { pathname } = useLocation()
@@ -31,6 +31,7 @@ const Layout: React.FC = () => {
       {isSuccess && (
         <>
           <Modals />
+          <CartFloat />
           <Header />
           <Outlet />
           {pathname != '/checkout' ? <InfoCompany /> : ''}
