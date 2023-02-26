@@ -6,11 +6,10 @@ import { NavLink } from 'react-router-dom'
 import { useAppSelector } from '@hooks/useRedux'
 
 /* Components */
-import { DesktopNav, MobileNav, SwitchTheme } from '@components'
+import { DesktopNav, MobileNav, SwitchTheme, SwitchCart } from '@components'
 
 /* Styles */
 import style from './index.module.scss'
-import CartDropdown from './CartDropdown/CartDropdown'
 
 /* Logo */
 import darkLogo from '@public/assets/dark-theme-logo.svg'
@@ -33,7 +32,7 @@ const NavBar: React.FC = () => {
 
       <SwitchTheme />
 
-      <CartDropdown />
+      <SwitchCart />
     </nav>
   )
 }

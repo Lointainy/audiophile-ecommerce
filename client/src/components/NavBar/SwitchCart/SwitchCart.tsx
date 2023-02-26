@@ -13,19 +13,19 @@ import { useAppSelector, useAppDispatch } from '@hooks/useRedux'
 import { increaseCart, decreaseCart, clearCart } from '@store/reducers/cartSlice'
 
 /* Styles */
-import style from './CartDropdown.module.scss'
+import style from './SwitchCart.module.scss'
 
 /* Icons */
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 
 /* Components */
-import EmpryCart from '@/components/EmptyCart/EmptyCart'
+import { EmptyCart } from '@components'
 
 const initialState = {
   toggle: false,
 }
 
-const CartDropdown: React.FC = () => {
+const SwitchCart: React.FC = () => {
   let location = useLocation()
 
   const { toggle, handleToggle, setToggle } = useToggle(initialState.toggle)
@@ -99,7 +99,7 @@ const CartDropdown: React.FC = () => {
                   </NavLink>
                 </div>
               ) : (
-                <EmpryCart />
+                <EmptyCart />
               )}
             </div>
           </div>
@@ -108,4 +108,4 @@ const CartDropdown: React.FC = () => {
     </div>
   )
 }
-export default CartDropdown
+export default SwitchCart

@@ -19,6 +19,7 @@ export { default as DesktopNav } from './NavBar/DesktopNav/DesktopNav'
 export { default as MobileNav } from './NavBar/MobileNav/MobileNav'
 export { default as SwitchTheme } from './NavBar/SwitchTheme/SwitchTheme'
 export { default as NavBar } from './NavBar/index'
+export { default as SwitchCart } from './NavBar/SwitchCart/SwitchCart'
 /* Products */
 export { default as OtherInfo } from './OtherInfo/OtherInfo'
 export { default as OtherProducts } from './OtherProducts/OtherProducts'
