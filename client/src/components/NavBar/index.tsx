@@ -12,8 +12,8 @@ import { DesktopNav, MobileNav, SwitchTheme, SwitchCart } from '@components'
 import style from './index.module.scss'
 
 /* Logo */
-import darkLogo from '@public/assets/dark-theme-logo.svg'
-import lightLogo from '@public/assets/light-theme-logo.svg'
+import darkLogo from '@/assets/image/dark-theme-logo.svg'
+import lightLogo from '@/assets/image/light-theme-logo.svg'
 
 const NavBar: React.FC = () => {
   const theme = useAppSelector((store) => store.ui.colorTheme)

@@ -15,8 +15,8 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { DesktopNav } from '@components'
 
 /* logo */
-import darkLogo from '@public/assets/dark-theme-logo.svg'
-import lightLogo from '@public/assets/light-theme-logo.svg'
+import darkLogo from '@/assets/image/dark-theme-logo.svg'
+import lightLogo from '@/assets/image/light-theme-logo.svg'
 
 // import lightLogo from ''
 
