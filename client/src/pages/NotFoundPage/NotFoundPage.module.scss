@@ -1,0 +1,9 @@
+@import '@styles/main';
+
+.page {
+  @include container(padding);
+  display: grid;
+  text-align: center;
+  padding-top: $margin-items;
+  padding-bottom: $margin-items;
+}
