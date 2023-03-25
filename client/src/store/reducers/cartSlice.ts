@@ -31,6 +31,10 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    setOrder: (state, action) => {
+      let localOrder = JSON.parse(localStorage.getItem('order')) || []
+      state.order = localOrder
+    },
     addToCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
 
@@ -40,9 +44,15 @@ export const cartSlice = createSlice({
           state.errorQuantity = true
           state.order[find].quantity = state.maxQuantity
         }
+        localStorage.setItem('order', JSON.stringify(state.order))
       }
 
-      find < 0 ? (state.order = [...state.order, action.payload]) : ''
+      if (find < 0) {
+        state.order = [...state.order, action.payload]
+        let localOrder = JSON.parse(localStorage.getItem('order')) || []
+        localOrder.push(action.payload)
+        localStorage.setItem('order', JSON.stringify(localOrder))
+      }
 
       calcPrice(state)
     },
@@ -51,11 +61,13 @@ export const cartSlice = createSlice({
 
       if (find >= 0) {
         state.order[find].quantity < state.maxQuantity ? (state.order[find].quantity += 1) : ''
+        localStorage.setItem('order', JSON.stringify(state.order))
       } else {
         state.order = [...state.order, action.payload]
       }
 
       calcPrice(state)
+      localStorage.setItem('order', JSON.stringify(state.order))
     },
     decreaseCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
@@ -68,10 +80,12 @@ export const cartSlice = createSlice({
       }
 
       calcPrice(state)
+      localStorage.setItem('order', JSON.stringify(state.order))
     },
     clearCart: (state) => {
       state.order = []
       state.total = 0
+      localStorage.setItem('order', JSON.stringify([]))
     },
     clearErrorQuantity: (state) => {
       state.errorQuantity = false
@@ -79,6 +93,6 @@ export const cartSlice = createSlice({
   },
 })
 
-export const { addToCart, increaseCart, decreaseCart, clearCart, clearErrorQuantity } = cartSlice.actions
+export const { setOrder, addToCart, increaseCart, decreaseCart, clearCart, clearErrorQuantity } = cartSlice.actions
 
 export default cartSlice.reducer
