@@ -18,3 +18,8 @@
   color: color(titleInvert);
   text-transform: uppercase;
 }
+
+.error {
+  @include container(padding);
+  text-align: center;
+}

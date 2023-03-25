@@ -11,6 +11,11 @@
   @include container(padding);
 }
 
+.error {
+  @include container(padding);
+  text-align: center;
+}
+
 @include media(md, mx) {
   .page {
     row-gap: 5rem;

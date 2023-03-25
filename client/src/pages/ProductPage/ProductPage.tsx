@@ -6,8 +6,7 @@ import { useGetProductQuery } from '@/store/reducers/productsApi'
 import { addToCart } from '@store/reducers/cartSlice'
 
 /* Router */
-import { ROUTES } from '@router/routes'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 /* Components */
 import { BackButton, CategoryList, Loader, OtherInfo, OtherProducts, PhotoGallery, ProductInfo } from '@components'
@@ -21,12 +20,6 @@ const ProductPage: React.FC = () => {
   const { productName } = useParams()
 
   const { data: product, isLoading, isSuccess, isError } = useGetProductQuery(productName)
-
-  let navigate = useNavigate()
-
-  useEffect(() => {
-    isError && navigate(`${ROUTES.error}`)
-  }, [isError])
 
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -51,6 +44,11 @@ const ProductPage: React.FC = () => {
         </>
       )}
       {isLoading && <Loader />}
+      {isError && (
+        <div className={style.error}>
+          <h1>This product is not found</h1>
+        </div>
+      )}
       <CategoryList />
     </div>
   )
