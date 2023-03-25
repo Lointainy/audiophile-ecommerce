@@ -24,7 +24,7 @@ const CategoryPage: React.FC = () => {
   return (
     <div className={style.page}>
       <div className={style.field}>
-        <h2 className={style.title}>{categoryName}</h2>
+        <h2 className={style.title}>{isSuccess ? categoryName : 'Not found'}</h2>
       </div>
 
       {isSuccess && <ProductsByCategory products={data} />}
