@@ -34,6 +34,8 @@ export const cartSlice = createSlice({
     setOrder: (state, action) => {
       let localOrder = JSON.parse(localStorage.getItem('order')) || []
       state.order = localOrder
+
+      calcPrice(state)
     },
     addToCart: (state, action) => {
       let find = state.order.findIndex((product) => product.slug === action.payload.slug)
