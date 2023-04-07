@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
   - [Preview](https://audiophile-ecommerce-react-lointainy.netlify.app/)
-  - [API](https://audiophile-ecommerce-api.onrender.com/)
+  - [API](https://audio-server-git-master-lointainy.vercel.app/)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
