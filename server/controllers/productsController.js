@@ -17,7 +17,7 @@ const getProduct = async (req, res) => {
 	try {
 		const { slug } = req.params
 		const product = await Product.findOne({ slug: slug })
-		if (!product) res.status(404).json(`No product with id: ${slug}`)
+		if (!product) res.status(404).json(`No product with slug: ${slug}`)
 		res.status(200).json(product)
 	} catch (error) {
 		console.log(error)
